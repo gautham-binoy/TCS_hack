@@ -79,14 +79,14 @@ export const MonitorPage: React.FC<MonitorPageProps> = ({
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-              Campus Sustainability Monitor
+              MACE Sustainability Telemetry Monitor
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
               Live Stream
             </span>
           </div>
           <p className="text-sm text-slate-500 mt-1">
-            Real-time telemetry, resource intensity benchmarking, and system alerts.
+            Real-time telemetry, resource intensity benchmarking, and system alerts for Mar Athanasius College of Engineering, Kothamangalam.
           </p>
         </div>
 

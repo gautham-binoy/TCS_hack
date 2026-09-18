@@ -12,11 +12,18 @@ export type LatLngTuple = [number, number];
 export interface BuildingMetrics {
   energyKwhPerDay: number;
   energyPeakKw: number;
+  energyBaselineKwhPerDay?: number;
+  energyChangePct?: number;
   wasteKgPerDay: number;
   wasteDiversionPct: number;
+  wasteChangePct?: number;
+  wasteBaselineKgPerDay?: number;
   waterLitersPerDay: number;
-  waterRecycledPct: number;
+  waterRecycledPct?: number;
+  waterChangePct?: number;
+  waterBaselineLitersPerDay?: number;
   carbonKgCo2ePerDay: number;
+  carbonChangePct?: number;
   carbonIntensityRating: 'A' | 'B' | 'C' | 'D';
 }
 
@@ -28,19 +35,54 @@ export interface MetricTrendPoint {
   wasteKg: number;
 }
 
+export interface BuildingEquipment {
+  id: string;
+  name: string;
+  category: string;
+  status: string;
+  powerDrawKw: number;
+  efficiencyRating: string;
+}
+
+export interface BuildingHourlyPoint {
+  hour: string;
+  energyKw: number;
+  baselineKw: number;
+}
+
+export interface BuildingMeter {
+  id: string;
+  type: string;
+  label: string;
+  currentReading: number;
+  unit: string;
+  status: string;
+}
+
+export interface BuildingHourlyEnergy {
+  hour: string;
+  energyKw: number;
+  baselineKw: number;
+}
+
 export interface Building {
   id: string;
   name: string;
   code: string;
-  category: 'academic' | 'research' | 'residential' | 'student_life' | 'athletics' | 'administration' | 'infrastructure';
+  category: 'academic' | 'research' | 'residential' | 'student_life' | 'athletics' | 'administration' | 'infrastructure' | 'workshop' | 'library' | 'dining';
   coordinates: LatLngTuple;
   polygonCoordinates: LatLngTuple[];
   sustainabilityScore: number; // 0 - 100
   floorAreaSqMeters: number;
   yearBuilt: number;
+  solarInstalledKw?: number;
   leedCertification?: 'Platinum' | 'Gold' | 'Silver' | 'Certified';
   metrics: BuildingMetrics;
-  historicalTrends: MetricTrendPoint[];
+  historicalTrends?: MetricTrendPoint[];
+  meters?: BuildingMeter[];
+  equipment?: BuildingEquipment[];
+  hourlyLoadProfile?: BuildingHourlyPoint[];
+  hourlyEnergy?: BuildingHourlyEnergy[];
   alerts: Alert[];
   recommendations: Recommendation[];
 }
@@ -109,7 +151,7 @@ export interface CampusRoad {
 export interface CampusGreenArea {
   id: string;
   name: string;
-  type: 'arboretum' | 'park' | 'bioswale' | 'community_garden';
+  type: 'arboretum' | 'park' | 'bioswale' | 'community_garden' | 'meadow';
   coordinates: LatLngTuple[];
   areaSqM: number;
 }
@@ -118,7 +160,7 @@ export interface Alert {
   id: string;
   severity: 'critical' | 'warning' | 'info';
   title: string;
-  description: string;
+  description?: string;
   category: 'energy' | 'waste' | 'water' | 'carbon' | 'sensor';
   buildingId?: string;
   buildingName?: string;

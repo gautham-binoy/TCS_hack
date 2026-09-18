@@ -1,8 +1,8 @@
 {
   "campus": {
-    "id": "campus-vit-main",
-    "name": "Verdant EcoCampus Twin",
-    "location": "Northern California Campus Grounds",
+    "id": "campus-mace-kothamangalam",
+    "name": "Mar Athanasius College of Engineering (MACE)",
+    "location": "Kothamangalam, Ernakulam District, Kerala, India 686666",
     "centerCoordinates": [
       10.053735,
       76.619261
@@ -19,1273 +19,987 @@
       ]
     ],
     "totalBuildings": 9,
-    "totalSensors": 42,
+    "totalSensors": 36,
     "totalWasteBins": 8,
-    "totalWaterStations": 8,
-    "solarCapacityKw": 750,
-    "sustainabilityScore": 86,
+    "totalWaterStations": 6,
+    "solarCapacityKw": 450,
+    "sustainabilityScore": 88,
     "carbonNeutralTargetYear": 2030,
     "currentWeather": {
-      "tempC": 21.4,
-      "solarRadiationWm2": 840,
-      "airQualityIndex": 28,
-      "condition": "Optimal Solar Generation"
+      "tempC": 29.4,
+      "solarRadiationWm2": 790,
+      "airQualityIndex": 22,
+      "condition": "Optimal Tropical Solar Generation"
     }
   },
   "buildings": [
     {
-      "id": "bldg-eng",
-      "name": "Science & Engineering Hall",
-      "code": "SEH-01",
-      "category": "research",
+      "id": "bldg-admin",
+      "name": "Administrative Block (Main Building)",
+      "code": "MACE-ADM",
+      "category": "administration",
       "coordinates": [
-        10.054435,
-        76.618491
+        10.054204,
+        76.619172
       ],
       "polygonCoordinates": [
         [
-          10.05468,
-          76.618141
+          10.05445,
+          76.61895
         ],
         [
-          10.05468,
-          76.618841
+          10.05445,
+          76.6194
         ],
         [
-          10.05419,
-          76.618841
+          10.05395,
+          76.6194
         ],
         [
-          10.05419,
-          76.618141
-        ]
-      ],
-      "sustainabilityScore": 84,
-      "floorAreaSqMeters": 14200,
-      "yearBuilt": 2018,
-      "leedCertification": "Gold",
-      "metrics": {
-        "energyKwhPerDay": 4850,
-        "energyPeakKw": 420,
-        "wasteKgPerDay": 280,
-        "wasteDiversionPct": 78,
-        "waterLitersPerDay": 18400,
-        "waterRecycledPct": 45,
-        "carbonKgCo2ePerDay": 1220,
-        "carbonIntensityRating": "B"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 4720,
-          "waterLiters": 18100,
-          "carbonKg": 1190,
-          "wasteKg": 270
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 4890,
-          "waterLiters": 18900,
-          "carbonKg": 1240,
-          "wasteKg": 290
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 5120,
-          "waterLiters": 19400,
-          "carbonKg": 1310,
-          "wasteKg": 310
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 4980,
-          "waterLiters": 18600,
-          "carbonKg": 1260,
-          "wasteKg": 285
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 4750,
-          "waterLiters": 17800,
-          "carbonKg": 1200,
-          "wasteKg": 275
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 2900,
-          "waterLiters": 9200,
-          "carbonKg": 720,
-          "wasteKg": 130
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 2450,
-          "waterLiters": 8400,
-          "carbonKg": 610,
-          "wasteKg": 110
-        }
-      ],
-      "alerts": [
-        {
-          "id": "alert-eng-1",
-          "severity": "warning",
-          "title": "HVAC Chiller Surge Detected",
-          "description": "Cleanroom laboratory AC units on 3rd floor registered a 14% power surge between 13:00 and 15:00.",
-          "category": "energy",
-          "buildingId": "bldg-eng",
-          "buildingName": "Science & Engineering Hall",
-          "timestamp": "2 hours ago",
-          "status": "active"
-        }
-      ],
-      "recommendations": [
-        {
-          "id": "rec-eng-1",
-          "title": "Opt-in Fume Hood Exhaust Scheduling",
-          "description": "Adjust automated variable air volume (VAV) on research fume hoods outside peak lab hours.",
-          "impact": "high",
-          "estimatedSavings": "12% Energy (~$1,400/mo)",
-          "category": "energy",
-          "buildingId": "bldg-eng",
-          "actionableStep": "Schedule automated night-setback policy via BMS controller."
-        },
-        {
-          "id": "rec-eng-2",
-          "title": "Greywater Loop Recalibration",
-          "description": "Cleanroom cooling tower bleed line can be routed to irrigation bioswale 2.",
-          "impact": "medium",
-          "estimatedSavings": "2,200 L/day Water",
-          "category": "water",
-          "buildingId": "bldg-eng"
-        }
-      ]
-    },
-    {
-      "id": "bldg-sust",
-      "name": "Sustainable Tech & Innovation Center",
-      "code": "STIC-02",
-      "category": "academic",
-      "coordinates": [
-        10.05391,
-        76.619961
-      ],
-      "polygonCoordinates": [
-        [
-          10.054155,
-          76.619646
-        ],
-        [
-          10.054155,
-          76.620276
-        ],
-        [
-          10.053665,
-          76.620276
-        ],
-        [
-          10.053665,
-          76.619646
-        ]
-      ],
-      "sustainabilityScore": 96,
-      "floorAreaSqMeters": 8900,
-      "yearBuilt": 2023,
-      "leedCertification": "Platinum",
-      "metrics": {
-        "energyKwhPerDay": 1420,
-        "energyPeakKw": 110,
-        "wasteKgPerDay": 95,
-        "wasteDiversionPct": 92,
-        "waterLitersPerDay": 5200,
-        "waterRecycledPct": 82,
-        "carbonKgCo2ePerDay": 180,
-        "carbonIntensityRating": "A"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 1450,
-          "waterLiters": 5100,
-          "carbonKg": 190,
-          "wasteKg": 95
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 1420,
-          "waterLiters": 5300,
-          "carbonKg": 180,
-          "wasteKg": 100
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 1480,
-          "waterLiters": 5400,
-          "carbonKg": 195,
-          "wasteKg": 98
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 1390,
-          "waterLiters": 5150,
-          "carbonKg": 175,
-          "wasteKg": 92
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 1350,
-          "waterLiters": 4900,
-          "carbonKg": 165,
-          "wasteKg": 90
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 780,
-          "waterLiters": 2200,
-          "carbonKg": 90,
-          "wasteKg": 35
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 690,
-          "waterLiters": 1900,
-          "carbonKg": 80,
-          "wasteKg": 30
-        }
-      ],
-      "alerts": [],
-      "recommendations": [
-        {
-          "id": "rec-sust-1",
-          "title": "Maintain Active Photovoltaic Glazing",
-          "description": "Bi-annual panel dust cleaning scheduled next Tuesday to maintain 98.4% photon harvest.",
-          "impact": "low",
-          "estimatedSavings": "4% Solar Yield",
-          "category": "energy",
-          "buildingId": "bldg-sust"
-        }
-      ]
-    },
-    {
-      "id": "bldg-union",
-      "name": "Student Union & Dining Commons",
-      "code": "SUDC-03",
-      "category": "student_life",
-      "coordinates": [
-        10.05328,
-        76.618281
-      ],
-      "polygonCoordinates": [
-        [
-          10.053525,
-          76.617931
-        ],
-        [
-          10.053525,
-          76.618631
-        ],
-        [
-          10.053035,
-          76.618631
-        ],
-        [
-          10.053035,
-          76.617931
-        ]
-      ],
-      "sustainabilityScore": 78,
-      "floorAreaSqMeters": 11200,
-      "yearBuilt": 2012,
-      "leedCertification": "Silver",
-      "metrics": {
-        "energyKwhPerDay": 5400,
-        "energyPeakKw": 480,
-        "wasteKgPerDay": 840,
-        "wasteDiversionPct": 74,
-        "waterLitersPerDay": 32000,
-        "waterRecycledPct": 35,
-        "carbonKgCo2ePerDay": 1740,
-        "carbonIntensityRating": "C"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 5350,
-          "waterLiters": 31000,
-          "carbonKg": 1710,
-          "wasteKg": 820
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 5420,
-          "waterLiters": 32500,
-          "carbonKg": 1750,
-          "wasteKg": 860
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 5580,
-          "waterLiters": 33400,
-          "carbonKg": 1810,
-          "wasteKg": 890
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 5480,
-          "waterLiters": 32800,
-          "carbonKg": 1760,
-          "wasteKg": 870
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 5620,
-          "waterLiters": 34000,
-          "carbonKg": 1830,
-          "wasteKg": 910
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 3800,
-          "waterLiters": 21000,
-          "carbonKg": 1200,
-          "wasteKg": 520
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 3500,
-          "waterLiters": 19500,
-          "carbonKg": 1100,
-          "wasteKg": 490
-        }
-      ],
-      "alerts": [
-        {
-          "id": "alert-union-1",
-          "severity": "warning",
-          "title": "High Food Organic Waste Contamination",
-          "description": "Trash stream sensor bin B-04 detected 24% organic matter in general landfill bin.",
-          "category": "waste",
-          "buildingId": "bldg-union",
-          "buildingName": "Student Union & Dining Commons",
-          "timestamp": "4 hours ago",
-          "status": "active"
-        }
-      ],
-      "recommendations": [
-        {
-          "id": "rec-union-1",
-          "title": "Smart Waste Weigh Scale Pilot",
-          "description": "Install optical sorting nudges and plate-waste scale feedback to decrease food waste.",
-          "impact": "high",
-          "estimatedSavings": "180 kg/day Waste Diversion",
-          "category": "waste",
-          "buildingId": "bldg-union"
-        },
-        {
-          "id": "rec-union-2",
-          "title": "Commercial Dishwasher Heat Recovery",
-          "description": "Capture greywater thermal exhaust to preheat rinse water cycles.",
-          "impact": "medium",
-          "estimatedSavings": "15% Gas/Electric Heating",
-          "category": "energy",
-          "buildingId": "bldg-union"
-        }
-      ]
-    },
-    {
-      "id": "bldg-lib",
-      "name": "Central Green Library",
-      "code": "CGL-04",
-      "category": "academic",
-      "coordinates": [
-        10.053385,
-        76.619681
-      ],
-      "polygonCoordinates": [
-        [
-          10.05363,
-          76.619366
-        ],
-        [
-          10.05363,
-          76.619996
-        ],
-        [
-          10.05314,
-          76.619996
-        ],
-        [
-          10.05314,
-          76.619366
-        ]
-      ],
-      "sustainabilityScore": 92,
-      "floorAreaSqMeters": 16500,
-      "yearBuilt": 2020,
-      "leedCertification": "Platinum",
-      "metrics": {
-        "energyKwhPerDay": 2600,
-        "energyPeakKw": 210,
-        "wasteKgPerDay": 140,
-        "wasteDiversionPct": 88,
-        "waterLitersPerDay": 9400,
-        "waterRecycledPct": 65,
-        "carbonKgCo2ePerDay": 580,
-        "carbonIntensityRating": "A"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 2620,
-          "waterLiters": 9500,
-          "carbonKg": 590,
-          "wasteKg": 142
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 2680,
-          "waterLiters": 9700,
-          "carbonKg": 610,
-          "wasteKg": 145
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 2750,
-          "waterLiters": 9900,
-          "carbonKg": 630,
-          "wasteKg": 150
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 2640,
-          "waterLiters": 9400,
-          "carbonKg": 585,
-          "wasteKg": 138
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 2510,
-          "waterLiters": 8900,
-          "carbonKg": 550,
-          "wasteKg": 130
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 1820,
-          "waterLiters": 6400,
-          "carbonKg": 400,
-          "wasteKg": 95
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 1980,
-          "waterLiters": 6900,
-          "carbonKg": 430,
-          "wasteKg": 105
-        }
-      ],
-      "alerts": [],
-      "recommendations": [
-        {
-          "id": "rec-lib-1",
-          "title": "Daylight Harvesting Blind Automation",
-          "description": "Sync motorized exterior louvers with sun azimuth to cut ambient artificial lighting.",
-          "impact": "medium",
-          "estimatedSavings": "8% Lighting kWh",
-          "category": "energy",
-          "buildingId": "bldg-lib"
-        }
-      ]
-    },
-    {
-      "id": "bldg-res-n",
-      "name": "North Eco-Residence Village",
-      "code": "ERV-05",
-      "category": "residential",
-      "coordinates": [
-        10.05496,
-        76.619786
-      ],
-      "polygonCoordinates": [
-        [
-          10.055205,
-          76.619436
-        ],
-        [
-          10.055205,
-          76.620136
-        ],
-        [
-          10.054715,
-          76.620136
-        ],
-        [
-          10.054715,
-          76.619436
+          10.05395,
+          76.61895
         ]
       ],
       "sustainabilityScore": 88,
-      "floorAreaSqMeters": 18000,
-      "yearBuilt": 2021,
-      "leedCertification": "Platinum",
-      "metrics": {
-        "energyKwhPerDay": 3900,
-        "energyPeakKw": 310,
-        "wasteKgPerDay": 460,
-        "wasteDiversionPct": 82,
-        "waterLitersPerDay": 36000,
-        "waterRecycledPct": 60,
-        "carbonKgCo2ePerDay": 980,
-        "carbonIntensityRating": "B"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 3880,
-          "waterLiters": 35800,
-          "carbonKg": 970,
-          "wasteKg": 450
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 3920,
-          "waterLiters": 36200,
-          "carbonKg": 990,
-          "wasteKg": 465
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 3950,
-          "waterLiters": 36500,
-          "carbonKg": 1010,
-          "wasteKg": 470
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 3910,
-          "waterLiters": 36000,
-          "carbonKg": 980,
-          "wasteKg": 455
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 4050,
-          "waterLiters": 37400,
-          "carbonKg": 1040,
-          "wasteKg": 490
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 4200,
-          "waterLiters": 38900,
-          "carbonKg": 1090,
-          "wasteKg": 510
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 4120,
-          "waterLiters": 38200,
-          "carbonKg": 1060,
-          "wasteKg": 495
-        }
-      ],
-      "alerts": [],
-      "recommendations": [
-        {
-          "id": "rec-res-1",
-          "title": "Dorm Energy Competition Engagement",
-          "description": "Gamify hall energy usage with live floor dashboards to incentivize phantom power reductions.",
-          "impact": "medium",
-          "estimatedSavings": "5-9% Dorm Electricity",
-          "category": "energy",
-          "buildingId": "bldg-res-n"
-        }
-      ]
-    },
-    {
-      "id": "bldg-res-s",
-      "name": "South Heritage Hall",
-      "code": "SHH-06",
-      "category": "residential",
-      "coordinates": [
-        10.052335,
-        76.618911
-      ],
-      "polygonCoordinates": [
-        [
-          10.05258,
-          76.618561
-        ],
-        [
-          10.05258,
-          76.619261
-        ],
-        [
-          10.05209,
-          76.619261
-        ],
-        [
-          10.05209,
-          76.618561
-        ]
-      ],
-      "sustainabilityScore": 71,
-      "floorAreaSqMeters": 12500,
-      "yearBuilt": 1994,
-      "leedCertification": "Certified",
-      "metrics": {
-        "energyKwhPerDay": 4600,
-        "energyPeakKw": 390,
-        "wasteKgPerDay": 390,
-        "wasteDiversionPct": 62,
-        "waterLitersPerDay": 29000,
-        "waterRecycledPct": 15,
-        "carbonKgCo2ePerDay": 1520,
-        "carbonIntensityRating": "C"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 4550,
-          "waterLiters": 28800,
-          "carbonKg": 1500,
-          "wasteKg": 385
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 4610,
-          "waterLiters": 29200,
-          "carbonKg": 1530,
-          "wasteKg": 392
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 4680,
-          "waterLiters": 29600,
-          "carbonKg": 1560,
-          "wasteKg": 400
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 4620,
-          "waterLiters": 29100,
-          "carbonKg": 1520,
-          "wasteKg": 388
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 4700,
-          "waterLiters": 29800,
-          "carbonKg": 1570,
-          "wasteKg": 405
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 4850,
-          "waterLiters": 31200,
-          "carbonKg": 1640,
-          "wasteKg": 425
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 4790,
-          "waterLiters": 30800,
-          "carbonKg": 1610,
-          "wasteKg": 415
-        }
-      ],
-      "alerts": [
-        {
-          "id": "alert-res-s-1",
-          "severity": "critical",
-          "title": "Continuous Restroom Water Leak",
-          "description": "Main wing riser water meter shows unbroken baseline flow of 14.2 L/min overnight.",
-          "category": "water",
-          "buildingId": "bldg-res-s",
-          "buildingName": "South Heritage Hall",
-          "timestamp": "1 hour ago",
-          "status": "active"
-        }
-      ],
-      "recommendations": [
-        {
-          "id": "rec-res-s-1",
-          "title": "LED Retrofit & Smart Thermostats",
-          "description": "Replace legacy fluorescent fixtures with 12W LED tubes and smart room setback sensors.",
-          "impact": "high",
-          "estimatedSavings": "22% Electricity (~$2,100/mo)",
-          "category": "energy",
-          "buildingId": "bldg-res-s"
-        },
-        {
-          "id": "rec-res-s-2",
-          "title": "Low-Flow Aerator Installations",
-          "description": "Upgrade faucets and showerheads to 1.5 GPM EPA WaterSense fixtures.",
-          "impact": "high",
-          "estimatedSavings": "7,500 L/day Water",
-          "category": "water",
-          "buildingId": "bldg-res-s"
-        }
-      ]
-    },
-    {
-      "id": "bldg-sport",
-      "name": "Sports & Aquatics Complex",
-      "code": "SAC-07",
-      "category": "athletics",
-      "coordinates": [
-        10.05286,
-        76.620836
-      ],
-      "polygonCoordinates": [
-        [
-          10.05314,
-          76.620451
-        ],
-        [
-          10.05314,
-          76.621221
-        ],
-        [
-          10.05258,
-          76.621221
-        ],
-        [
-          10.05258,
-          76.620451
-        ]
-      ],
-      "sustainabilityScore": 68,
-      "floorAreaSqMeters": 15800,
-      "yearBuilt": 2008,
-      "leedCertification": "Silver",
-      "metrics": {
-        "energyKwhPerDay": 6100,
-        "energyPeakKw": 560,
-        "wasteKgPerDay": 320,
-        "wasteDiversionPct": 68,
-        "waterLitersPerDay": 48000,
-        "waterRecycledPct": 20,
-        "carbonKgCo2ePerDay": 2080,
-        "carbonIntensityRating": "D"
-      },
-      "historicalTrends": [
-        {
-          "time": "Mon",
-          "energyKwh": 6050,
-          "waterLiters": 47200,
-          "carbonKg": 2050,
-          "wasteKg": 310
-        },
-        {
-          "time": "Tue",
-          "energyKwh": 6120,
-          "waterLiters": 48500,
-          "carbonKg": 2090,
-          "wasteKg": 325
-        },
-        {
-          "time": "Wed",
-          "energyKwh": 6200,
-          "waterLiters": 49100,
-          "carbonKg": 2130,
-          "wasteKg": 330
-        },
-        {
-          "time": "Thu",
-          "energyKwh": 6140,
-          "waterLiters": 48600,
-          "carbonKg": 2100,
-          "wasteKg": 320
-        },
-        {
-          "time": "Fri",
-          "energyKwh": 6250,
-          "waterLiters": 49800,
-          "carbonKg": 2150,
-          "wasteKg": 340
-        },
-        {
-          "time": "Sat",
-          "energyKwh": 5800,
-          "waterLiters": 44000,
-          "carbonKg": 1950,
-          "wasteKg": 290
-        },
-        {
-          "time": "Sun",
-          "energyKwh": 5400,
-          "waterLiters": 41000,
-          "carbonKg": 1800,
-          "wasteKg": 270
-        }
-      ],
-      "alerts": [
-        {
-          "id": "alert-sport-1",
-          "severity": "warning",
-          "title": "Olympic Pool Heating Surge",
-          "description": "Pool thermal cover was not engaged overnight, causing a 35% natural gas heating spike.",
-          "category": "energy",
-          "buildingId": "bldg-sport",
-          "buildingName": "Sports & Aquatics Complex",
-          "timestamp": "5 hours ago",
-          "status": "active"
-        }
-      ],
-      "recommendations": [
-        {
-          "id": "rec-sport-1",
-          "title": "Solar Thermal Preheating Array",
-          "description": "Install roof-mounted evacuated tube solar collectors dedicated to pool circulation.",
-          "impact": "high",
-          "estimatedSavings": "34% Heating Energy",
-          "category": "energy",
-          "buildingId": "bldg-sport"
-        },
-        {
-          "id": "rec-sport-2",
-          "title": "Automated Pool Thermal Blanketing",
-          "description": "Motorized roller deployment scheduled at closing reduces evaporation heat loss by 70%.",
-          "impact": "high",
-          "estimatedSavings": "$1,850/mo Energy & 4,000 L Water",
-          "category": "energy",
-          "buildingId": "bldg-sport"
-        }
-      ]
-    },
-    {
-      "id": "bldg-admin",
-      "name": "University Administration Pavilion",
-      "code": "UAP-08",
-      "category": "administration",
-      "coordinates": [
-        10.05419,
-        76.621011
-      ],
-      "polygonCoordinates": [
-        [
-          10.054435,
-          76.620731
-        ],
-        [
-          10.054435,
-          76.621291
-        ],
-        [
-          10.053945,
-          76.621291
-        ],
-        [
-          10.053945,
-          76.620731
-        ]
-      ],
-      "sustainabilityScore": 89,
-      "floorAreaSqMeters": 7200,
-      "yearBuilt": 2016,
+      "floorAreaSqMeters": 6800,
+      "yearBuilt": 1961,
       "leedCertification": "Gold",
+      "solarInstalledKw": 150,
       "metrics": {
-        "energyKwhPerDay": 1850,
-        "energyPeakKw": 160,
-        "wasteKgPerDay": 110,
-        "wasteDiversionPct": 86,
-        "waterLitersPerDay": 6200,
-        "waterRecycledPct": 50,
-        "carbonKgCo2ePerDay": 460,
+        "energyKwhPerDay": 2150,
+        "energyPeakKw": 180,
+        "energyChangePct": -4.5,
+        "energyBaselineKwhPerDay": 2250,
+        "wasteKgPerDay": 120,
+        "wasteDiversionPct": 85,
+        "wasteChangePct": 2.5,
+        "wasteBaselineKgPerDay": 140,
+        "waterLitersPerDay": 7500,
+        "waterChangePct": -3.2,
+        "carbonKgCo2ePerDay": 820,
         "carbonIntensityRating": "A"
       },
-      "historicalTrends": [
+      "meters": [
         {
-          "time": "Mon",
-          "energyKwh": 1980,
-          "waterLiters": 6400,
-          "carbonKg": 500,
-          "wasteKg": 120
+          "id": "m-adm-01",
+          "type": "electricity",
+          "label": "Main LT Incomer Panel",
+          "currentReading": 92.4,
+          "unit": "kW",
+          "status": "normal"
         },
         {
-          "time": "Tue",
-          "energyKwh": 2020,
-          "waterLiters": 6500,
-          "carbonKg": 510,
-          "wasteKg": 125
+          "id": "m-adm-02",
+          "type": "solar",
+          "label": "Admin Rooftop Solar Inverter",
+          "currentReading": 118.6,
+          "unit": "kW",
+          "status": "normal"
         },
         {
-          "time": "Wed",
-          "energyKwh": 2010,
-          "waterLiters": 6450,
-          "carbonKg": 505,
-          "wasteKg": 122
+          "id": "m-adm-03",
+          "type": "water",
+          "label": "Main Sump Water Pump",
+          "currentReading": 420,
+          "unit": "L/h",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-adm-01",
+          "name": "VRF Central AC (Council Hall)",
+          "category": "hvac",
+          "status": "running",
+          "powerDrawKw": 24.5,
+          "efficiencyRating": "5-Star BEE"
         },
         {
-          "time": "Thu",
-          "energyKwh": 1970,
-          "waterLiters": 6300,
-          "carbonKg": 495,
-          "wasteKg": 118
+          "id": "eq-adm-02",
+          "name": "Central Data Center UPS",
+          "category": "power",
+          "status": "running",
+          "powerDrawKw": 18.2,
+          "efficiencyRating": "High Efficiency Modular"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 65,
+          "baselineKw": 75
         },
         {
-          "time": "Fri",
-          "energyKwh": 1750,
-          "waterLiters": 5800,
-          "carbonKg": 430,
-          "wasteKg": 105
+          "hour": "10:00",
+          "energyKw": 145,
+          "baselineKw": 160
         },
         {
-          "time": "Sat",
-          "energyKwh": 620,
-          "waterLiters": 1800,
-          "carbonKg": 140,
-          "wasteKg": 30
+          "hour": "12:00",
+          "energyKw": 180,
+          "baselineKw": 195
         },
         {
-          "time": "Sun",
-          "energyKwh": 580,
-          "waterLiters": 1600,
-          "carbonKg": 130,
-          "wasteKg": 25
+          "hour": "14:00",
+          "energyKw": 170,
+          "baselineKw": 185
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 110,
+          "baselineKw": 125
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 45,
+          "baselineKw": 50
         }
       ],
       "alerts": [],
       "recommendations": [
         {
-          "id": "rec-admin-1",
-          "title": "Zero-Waste Digital Workflow Policy",
-          "description": "Transition executive print contracts to cloud-based signoff, aiming for 95% paper reduction.",
-          "impact": "low",
-          "estimatedSavings": "45 kg/month Paper",
-          "category": "waste",
+          "id": "rec-adm-1",
+          "title": "Occupancy Motion Sensors in Boardrooms",
+          "description": "Install PIR lighting sensors in admin conference halls to cut standby lighting by 30%.",
+          "impact": "medium",
+          "estimatedSavings": "12 kWh/day",
+          "category": "energy",
           "buildingId": "bldg-admin"
         }
       ]
     },
     {
-      "id": "bldg-microgrid",
-      "name": "Central Energy & Microgrid Plant",
-      "code": "CEMP-09",
-      "category": "infrastructure",
+      "id": "bldg-cse",
+      "name": "Department of Computer Science & Engineering",
+      "code": "MACE-CSE",
+      "category": "academic",
       "coordinates": [
-        10.055135,
-        76.618036
+        10.052162,
+        76.618865
       ],
       "polygonCoordinates": [
         [
-          10.05538,
-          76.617686
+          10.0524,
+          76.61865
         ],
         [
-          10.05538,
-          76.618386
+          10.0524,
+          76.6191
         ],
         [
-          10.05489,
-          76.618386
+          10.05195,
+          76.6191
         ],
         [
-          10.05489,
-          76.617686
+          10.05195,
+          76.61865
         ]
       ],
-      "sustainabilityScore": 94,
-      "floorAreaSqMeters": 5500,
-      "yearBuilt": 2022,
-      "leedCertification": "Platinum",
+      "sustainabilityScore": 86,
+      "floorAreaSqMeters": 7400,
+      "yearBuilt": 1989,
+      "leedCertification": "Silver",
+      "solarInstalledKw": 80,
       "metrics": {
-        "energyKwhPerDay": 850,
-        "energyPeakKw": 95,
-        "wasteKgPerDay": 40,
-        "wasteDiversionPct": 95,
-        "waterLitersPerDay": 3500,
-        "waterRecycledPct": 90,
-        "carbonKgCo2ePerDay": 110,
-        "carbonIntensityRating": "A"
+        "energyKwhPerDay": 3850,
+        "energyPeakKw": 320,
+        "energyChangePct": -2.1,
+        "energyBaselineKwhPerDay": 3930,
+        "wasteKgPerDay": 95,
+        "wasteDiversionPct": 89,
+        "wasteChangePct": 4.0,
+        "wasteBaselineKgPerDay": 110,
+        "waterLitersPerDay": 6800,
+        "waterChangePct": -1.8,
+        "carbonKgCo2ePerDay": 1480,
+        "carbonIntensityRating": "B"
       },
-      "historicalTrends": [
+      "meters": [
         {
-          "time": "Mon",
-          "energyKwh": 860,
-          "waterLiters": 3500,
-          "carbonKg": 115,
-          "wasteKg": 40
+          "id": "m-cse-01",
+          "type": "electricity",
+          "label": "CSE High-Performance Computing Lab",
+          "currentReading": 142.5,
+          "unit": "kW",
+          "status": "normal"
         },
         {
-          "time": "Tue",
-          "energyKwh": 850,
-          "waterLiters": 3600,
-          "carbonKg": 112,
-          "wasteKg": 42
+          "id": "m-cse-02",
+          "type": "electricity",
+          "label": "Networking & Systems Lab",
+          "currentReading": 88.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-cse-01",
+          "name": "AI & HPC Computing Cluster",
+          "category": "compute",
+          "status": "running",
+          "powerDrawKw": 45.0,
+          "efficiencyRating": "Gold 80-Plus"
         },
         {
-          "time": "Wed",
-          "energyKwh": 870,
-          "waterLiters": 3550,
-          "carbonKg": 116,
-          "wasteKg": 39
+          "id": "eq-cse-02",
+          "name": "Precision AC Server Inrow Unit",
+          "category": "hvac",
+          "status": "running",
+          "powerDrawKw": 22.0,
+          "efficiencyRating": "Inverter Variable"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 110,
+          "baselineKw": 120
         },
         {
-          "time": "Thu",
-          "energyKwh": 840,
-          "waterLiters": 3450,
-          "carbonKg": 108,
-          "wasteKg": 41
+          "hour": "10:00",
+          "energyKw": 285,
+          "baselineKw": 300
         },
         {
-          "time": "Fri",
-          "energyKwh": 830,
-          "waterLiters": 3400,
-          "carbonKg": 105,
-          "wasteKg": 38
+          "hour": "12:00",
+          "energyKw": 320,
+          "baselineKw": 335
         },
         {
-          "time": "Sat",
-          "energyKwh": 790,
-          "waterLiters": 3200,
-          "carbonKg": 98,
-          "wasteKg": 30
+          "hour": "14:00",
+          "energyKw": 305,
+          "baselineKw": 320
         },
         {
-          "time": "Sun",
-          "energyKwh": 780,
-          "waterLiters": 3100,
-          "carbonKg": 95,
-          "wasteKg": 28
+          "hour": "16:00",
+          "energyKw": 195,
+          "baselineKw": 210
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 90,
+          "baselineKw": 100
         }
       ],
       "alerts": [],
       "recommendations": [
         {
-          "id": "rec-micro-1",
-          "title": "Grid Peak Shaving Battery Discharge",
-          "description": "Auto-discharge 1.2 MWh battery reserve between 16:00 and 19:00 to reduce grid tariff surge.",
+          "id": "rec-cse-1",
+          "title": "Automated Power-Down on Lab Desktops",
+          "description": "Configure active sleep policy on 240 laboratory workstations during off-hours.",
           "impact": "high",
-          "estimatedSavings": "$3,800/mo Peak Demand Charges",
+          "estimatedSavings": "65 kWh/day",
           "category": "energy",
-          "buildingId": "bldg-microgrid"
+          "buildingId": "bldg-cse"
         }
       ]
-    }
-  ],
-  "sensors": [
-    {
-      "id": "sens-01",
-      "code": "AQ-ENG-01",
-      "name": "Outdoor Air Quality Node 1",
-      "type": "air_quality",
-      "location": "Science Hall Courtyard",
-      "coordinates": [
-        10.054785,
-        76.618631
-      ],
-      "buildingId": "bldg-eng",
-      "value": 24,
-      "unit": "AQI",
-      "status": "online",
-      "lastUpdated": "1 min ago"
     },
     {
-      "id": "sens-02",
-      "code": "EM-ENG-MAIN",
-      "name": "Main Feeder Smart Meter",
-      "type": "energy",
-      "location": "Science Hall Substation",
+      "id": "bldg-mech",
+      "name": "Department of Mechanical Engineering & Workshops",
+      "code": "MACE-MECH",
+      "category": "workshop",
       "coordinates": [
-        10.05426,
-        76.618211
+        10.052712,
+        76.618725
       ],
-      "buildingId": "bldg-eng",
-      "value": 412,
-      "unit": "kW",
-      "status": "warning",
-      "lastUpdated": "Just now"
+      "polygonCoordinates": [
+        [
+          10.05295,
+          76.6185
+        ],
+        [
+          10.05295,
+          76.61895
+        ],
+        [
+          10.0525,
+          76.61895
+        ],
+        [
+          10.0525,
+          76.6185
+        ]
+      ],
+      "sustainabilityScore": 81,
+      "floorAreaSqMeters": 8200,
+      "yearBuilt": 1965,
+      "leedCertification": "Certified",
+      "solarInstalledKw": 180,
+      "metrics": {
+        "energyKwhPerDay": 4200,
+        "energyPeakKw": 380,
+        "energyChangePct": 1.2,
+        "energyBaselineKwhPerDay": 4150,
+        "wasteKgPerDay": 220,
+        "wasteDiversionPct": 76,
+        "wasteChangePct": 1.5,
+        "wasteBaselineKgPerDay": 230,
+        "waterLitersPerDay": 9400,
+        "waterChangePct": -2.5,
+        "carbonKgCo2ePerDay": 1650,
+        "carbonIntensityRating": "B"
+      },
+      "meters": [
+        {
+          "id": "m-mech-01",
+          "type": "electricity",
+          "label": "Heavy Machine Tool Feeder",
+          "currentReading": 185.0,
+          "unit": "kW",
+          "status": "warning"
+        },
+        {
+          "id": "m-mech-02",
+          "type": "solar",
+          "label": "Workshop Solar Array Inverter",
+          "currentReading": 142.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-mech-01",
+          "name": "Industrial CNC Milling Machines",
+          "category": "machinery",
+          "status": "running",
+          "powerDrawKw": 55.0,
+          "efficiencyRating": "IE3 Premium"
+        },
+        {
+          "id": "eq-mech-02",
+          "name": "Central Compressed Air System",
+          "category": "pneumatic",
+          "status": "running",
+          "powerDrawKw": 30.0,
+          "efficiencyRating": "Variable Speed"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 120,
+          "baselineKw": 110
+        },
+        {
+          "hour": "10:00",
+          "energyKw": 360,
+          "baselineKw": 350
+        },
+        {
+          "hour": "12:00",
+          "energyKw": 380,
+          "baselineKw": 370
+        },
+        {
+          "hour": "14:00",
+          "energyKw": 370,
+          "baselineKw": 360
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 210,
+          "baselineKw": 200
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 85,
+          "baselineKw": 80
+        }
+      ],
+      "alerts": [
+        {
+          "id": "alt-mech-1",
+          "title": "Peak Workshop Power Spike",
+          "severity": "warning",
+          "category": "energy",
+          "timestamp": "1 hour ago",
+          "status": "active",
+          "buildingId": "bldg-mech",
+          "buildingName": "Mechanical Engineering Workshops"
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "rec-mech-1",
+          "title": "Stagger Heavy Motor Starting Schedules",
+          "description": "Sequentially start CNC milling units to eliminate 45 kW instantaneous peak demand surge.",
+          "impact": "high",
+          "estimatedSavings": "Peak load reduction 12%",
+          "category": "energy",
+          "buildingId": "bldg-mech"
+        }
+      ]
     },
     {
-      "id": "sens-03",
-      "code": "WF-ENG-01",
-      "name": "Cooling Tower Flow Sensor",
-      "type": "water_flow",
-      "location": "Science Hall Utility Room",
+      "id": "bldg-civil",
+      "name": "Department of Civil Engineering & Survey Lab",
+      "code": "MACE-CIVIL",
+      "category": "academic",
       "coordinates": [
-        10.05454,
-        76.618036
+        10.053193,
+        76.618423
       ],
-      "buildingId": "bldg-eng",
-      "value": 34.5,
-      "unit": "L/min",
-      "status": "online",
-      "lastUpdated": "3 mins ago"
+      "polygonCoordinates": [
+        [
+          10.05345,
+          76.6182
+        ],
+        [
+          10.05345,
+          76.61865
+        ],
+        [
+          10.05295,
+          76.61865
+        ],
+        [
+          10.05295,
+          76.6182
+        ]
+      ],
+      "sustainabilityScore": 87,
+      "floorAreaSqMeters": 6500,
+      "yearBuilt": 1963,
+      "leedCertification": "Gold",
+      "solarInstalledKw": 60,
+      "metrics": {
+        "energyKwhPerDay": 1950,
+        "energyPeakKw": 165,
+        "energyChangePct": -3.8,
+        "energyBaselineKwhPerDay": 2030,
+        "wasteKgPerDay": 80,
+        "wasteDiversionPct": 88,
+        "wasteChangePct": 3.1,
+        "wasteBaselineKgPerDay": 90,
+        "waterLitersPerDay": 8200,
+        "waterChangePct": -5.0,
+        "carbonKgCo2ePerDay": 740,
+        "carbonIntensityRating": "A"
+      },
+      "meters": [
+        {
+          "id": "m-civ-01",
+          "type": "electricity",
+          "label": "Environmental & Hydraulics Lab",
+          "currentReading": 78.0,
+          "unit": "kW",
+          "status": "normal"
+        },
+        {
+          "id": "m-civ-02",
+          "type": "water",
+          "label": "Rainwater Filtration Telemetry",
+          "currentReading": 850,
+          "unit": "L/h",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-civ-01",
+          "name": "Hydraulic Flume Circulation Pumps",
+          "category": "hydraulic",
+          "status": "running",
+          "powerDrawKw": 15.0,
+          "efficiencyRating": "High Efficiency"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 55,
+          "baselineKw": 60
+        },
+        {
+          "hour": "10:00",
+          "energyKw": 150,
+          "baselineKw": 160
+        },
+        {
+          "hour": "12:00",
+          "energyKw": 165,
+          "baselineKw": 175
+        },
+        {
+          "hour": "14:00",
+          "energyKw": 155,
+          "baselineKw": 165
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 95,
+          "baselineKw": 105
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 40,
+          "baselineKw": 45
+        }
+      ],
+      "alerts": [],
+      "recommendations": []
     },
     {
-      "id": "sens-04",
-      "code": "SOL-PARK-01",
-      "name": "Solar Inverter Cluster A",
-      "type": "solar",
-      "location": "North Parking Canopy",
+      "id": "bldg-eee",
+      "name": "Department of Electrical & Electronics Engineering",
+      "code": "MACE-EEE",
+      "category": "academic",
       "coordinates": [
-        10.055485,
-        76.619086
+        10.052066,
+        76.61987
       ],
-      "value": 485,
-      "unit": "kW",
-      "status": "online",
-      "lastUpdated": "Just now"
+      "polygonCoordinates": [
+        [
+          10.0523,
+          76.61965
+        ],
+        [
+          10.0523,
+          76.6201
+        ],
+        [
+          10.05185,
+          76.6201
+        ],
+        [
+          10.05185,
+          76.61965
+        ]
+      ],
+      "sustainabilityScore": 91,
+      "floorAreaSqMeters": 7000,
+      "yearBuilt": 1971,
+      "leedCertification": "Platinum",
+      "solarInstalledKw": 95,
+      "metrics": {
+        "energyKwhPerDay": 2400,
+        "energyPeakKw": 210,
+        "energyChangePct": -6.2,
+        "energyBaselineKwhPerDay": 2560,
+        "wasteKgPerDay": 85,
+        "wasteDiversionPct": 92,
+        "wasteChangePct": 5.0,
+        "wasteBaselineKgPerDay": 100,
+        "waterLitersPerDay": 5400,
+        "waterChangePct": -4.1,
+        "carbonKgCo2ePerDay": 910,
+        "carbonIntensityRating": "A"
+      },
+      "meters": [
+        {
+          "id": "m-eee-01",
+          "type": "electricity",
+          "label": "Electrical Machines Lab",
+          "currentReading": 95.0,
+          "unit": "kW",
+          "status": "normal"
+        },
+        {
+          "id": "m-eee-02",
+          "type": "solar",
+          "label": "Smart Microgrid Testbed Inverter",
+          "currentReading": 82.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-eee-01",
+          "name": "Microgrid Battery Energy Storage (BESS)",
+          "category": "storage",
+          "status": "running",
+          "powerDrawKw": 35.0,
+          "efficiencyRating": "Lithium-Iron-Phosphate"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 70,
+          "baselineKw": 80
+        },
+        {
+          "hour": "10:00",
+          "energyKw": 195,
+          "baselineKw": 210
+        },
+        {
+          "hour": "12:00",
+          "energyKw": 210,
+          "baselineKw": 230
+        },
+        {
+          "hour": "14:00",
+          "energyKw": 200,
+          "baselineKw": 220
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 120,
+          "baselineKw": 135
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 50,
+          "baselineKw": 55
+        }
+      ],
+      "alerts": [],
+      "recommendations": []
     },
     {
-      "id": "sens-05",
-      "code": "AQ-UNION-01",
-      "name": "Dining Hall Indoor CO2",
-      "type": "air_quality",
-      "location": "Student Union Atrium",
-      "coordinates": [
-        10.05342,
-        76.618421
-      ],
-      "buildingId": "bldg-union",
-      "value": 640,
-      "unit": "ppm",
-      "status": "online",
-      "lastUpdated": "2 mins ago"
-    },
-    {
-      "id": "sens-06",
-      "code": "EM-UNION-01",
-      "name": "Kitchen Power Monitor",
-      "type": "energy",
-      "location": "Dining Commons Kitchen",
-      "coordinates": [
-        10.05314,
-        76.618491
-      ],
-      "buildingId": "bldg-union",
-      "value": 168,
-      "unit": "kW",
-      "status": "online",
-      "lastUpdated": "Just now"
-    },
-    {
-      "id": "sens-07",
-      "code": "WF-RES-LEAK",
-      "name": "Domestic Water Main Riser",
-      "type": "water_flow",
-      "location": "South Heritage Hall B1",
-      "coordinates": [
-        10.05223,
-        76.618981
-      ],
-      "buildingId": "bldg-res-s",
-      "value": 14.2,
-      "unit": "L/min",
-      "status": "warning",
-      "lastUpdated": "Just now"
-    },
-    {
-      "id": "sens-08",
-      "code": "AQ-LIB-01",
-      "name": "Acoustic & IAQ Sensor",
-      "type": "air_quality",
-      "location": "Library Reading Room",
-      "coordinates": [
-        10.053455,
-        76.619856
-      ],
-      "buildingId": "bldg-lib",
-      "value": 18,
-      "unit": "AQI",
-      "status": "online",
-      "lastUpdated": "4 mins ago"
-    },
-    {
-      "id": "sens-09",
-      "code": "OCC-LIB-02",
-      "name": "Occupancy Optical Sensor",
-      "type": "occupancy",
-      "location": "Library 2nd Floor Mezzanine",
-      "coordinates": [
-        10.05328,
-        76.619541
-      ],
-      "buildingId": "bldg-lib",
-      "value": 142,
-      "unit": "people",
-      "status": "online",
-      "lastUpdated": "1 min ago"
-    },
-    {
-      "id": "sens-10",
-      "code": "EM-SPORT-01",
-      "name": "Pool Heat Pump Draw",
-      "type": "energy",
-      "location": "Aquatics Mechanical Room",
-      "coordinates": [
-        10.05279,
-        76.620731
-      ],
-      "buildingId": "bldg-sport",
-      "value": 245,
-      "unit": "kW",
-      "status": "warning",
-      "lastUpdated": "Just now"
-    },
-    {
-      "id": "sens-11",
-      "code": "WF-SPORT-POOL",
-      "name": "Make-up Water Flow",
-      "type": "water_flow",
-      "location": "Aquatics Center Inflow",
+      "id": "bldg-ece",
+      "name": "Department of Electronics & Communication",
+      "code": "MACE-ECE",
+      "category": "academic",
       "coordinates": [
         10.053,
-        76.621081
+        76.6198
       ],
-      "buildingId": "bldg-sport",
-      "value": 22.8,
-      "unit": "L/min",
-      "status": "online",
-      "lastUpdated": "2 mins ago"
+      "polygonCoordinates": [
+        [
+          10.05325,
+          76.6196
+        ],
+        [
+          10.05325,
+          76.62
+        ],
+        [
+          10.05275,
+          76.62
+        ],
+        [
+          10.05275,
+          76.6196
+        ]
+      ],
+      "sustainabilityScore": 87,
+      "floorAreaSqMeters": 6800,
+      "yearBuilt": 1985,
+      "leedCertification": "Gold",
+      "solarInstalledKw": 75,
+      "metrics": {
+        "energyKwhPerDay": 2250,
+        "energyPeakKw": 195,
+        "energyChangePct": -3.5,
+        "energyBaselineKwhPerDay": 2330,
+        "wasteKgPerDay": 70,
+        "wasteDiversionPct": 90,
+        "wasteChangePct": 3.5,
+        "wasteBaselineKgPerDay": 80,
+        "waterLitersPerDay": 5900,
+        "waterChangePct": -2.8,
+        "carbonKgCo2ePerDay": 860,
+        "carbonIntensityRating": "A"
+      },
+      "meters": [
+        {
+          "id": "m-ece-01",
+          "type": "electricity",
+          "label": "VLSI & Embedded Systems Lab",
+          "currentReading": 84.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [],
+      "hourlyLoadProfile": [],
+      "alerts": [],
+      "recommendations": []
     },
     {
-      "id": "sens-12",
-      "code": "SOL-ROOF-STIC",
-      "name": "Rooftop PV Pyranometer",
-      "type": "solar",
-      "location": "STIC Roof Observatory",
+      "id": "bldg-lib",
+      "name": "Central Library & Digital Information Centre",
+      "code": "MACE-LIB",
+      "category": "library",
       "coordinates": [
-        10.05398,
-        76.620031
+        10.053612,
+        76.619891
       ],
-      "buildingId": "bldg-sust",
-      "value": 890,
-      "unit": "W/m\u00b2",
-      "status": "online",
-      "lastUpdated": "Just now"
+      "polygonCoordinates": [
+        [
+          10.05385,
+          76.61965
+        ],
+        [
+          10.05385,
+          76.62015
+        ],
+        [
+          10.0534,
+          76.62015
+        ],
+        [
+          10.0534,
+          76.61965
+        ]
+      ],
+      "sustainabilityScore": 93,
+      "floorAreaSqMeters": 5800,
+      "yearBuilt": 1998,
+      "leedCertification": "Platinum",
+      "solarInstalledKw": 120,
+      "metrics": {
+        "energyKwhPerDay": 1650,
+        "energyPeakKw": 140,
+        "energyChangePct": -8.4,
+        "energyBaselineKwhPerDay": 1800,
+        "wasteKgPerDay": 45,
+        "wasteDiversionPct": 95,
+        "wasteChangePct": 6.0,
+        "wasteBaselineKgPerDay": 55,
+        "waterLitersPerDay": 4200,
+        "waterChangePct": -4.5,
+        "carbonKgCo2ePerDay": 620,
+        "carbonIntensityRating": "A"
+      },
+      "meters": [
+        {
+          "id": "m-lib-01",
+          "type": "electricity",
+          "label": "Digital Reading Hall Lighting",
+          "currentReading": 34.0,
+          "unit": "kW",
+          "status": "normal"
+        },
+        {
+          "id": "m-lib-02",
+          "type": "solar",
+          "label": "Library Rooftop PV Feed",
+          "currentReading": 96.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-lib-01",
+          "name": "Daylight Harvesting LED Dimming System",
+          "category": "lighting",
+          "status": "running",
+          "powerDrawKw": 12.0,
+          "efficiencyRating": "Smart Luminaire"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 40,
+          "baselineKw": 50
+        },
+        {
+          "hour": "10:00",
+          "energyKw": 125,
+          "baselineKw": 140
+        },
+        {
+          "hour": "12:00",
+          "energyKw": 140,
+          "baselineKw": 155
+        },
+        {
+          "hour": "14:00",
+          "energyKw": 135,
+          "baselineKw": 150
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 105,
+          "baselineKw": 120
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 65,
+          "baselineKw": 75
+        }
+      ],
+      "alerts": [],
+      "recommendations": []
     },
     {
-      "id": "sens-13",
-      "code": "TMP-SOIL-BIO",
-      "name": "Bioswale Soil Moisture",
-      "type": "water_flow",
-      "location": "Central Bioswale Park",
+      "id": "bldg-caf",
+      "name": "College Canteen & Student Amenities (Block A)",
+      "code": "MACE-CANTEEN",
+      "category": "dining",
       "coordinates": [
-        10.05384,
-        76.618841
+        10.053131,
+        76.619116
       ],
-      "value": 68,
-      "unit": "% moisture",
-      "status": "online",
-      "lastUpdated": "5 mins ago"
+      "polygonCoordinates": [
+        [
+          10.05335,
+          76.6189
+        ],
+        [
+          10.05335,
+          76.61935
+        ],
+        [
+          10.05295,
+          76.61935
+        ],
+        [
+          10.05295,
+          76.6189
+        ]
+      ],
+      "sustainabilityScore": 83,
+      "floorAreaSqMeters": 4200,
+      "yearBuilt": 1982,
+      "leedCertification": "Gold",
+      "solarInstalledKw": 40,
+      "metrics": {
+        "energyKwhPerDay": 2950,
+        "energyPeakKw": 240,
+        "energyChangePct": -2.4,
+        "energyBaselineKwhPerDay": 3020,
+        "wasteKgPerDay": 340,
+        "wasteDiversionPct": 82,
+        "wasteChangePct": 4.5,
+        "wasteBaselineKgPerDay": 380,
+        "waterLitersPerDay": 14500,
+        "waterChangePct": -3.0,
+        "carbonKgCo2ePerDay": 1180,
+        "carbonIntensityRating": "B"
+      },
+      "meters": [
+        {
+          "id": "m-caf-01",
+          "type": "electricity",
+          "label": "Canteen Refrigeration & Kitchen Feeder",
+          "currentReading": 115.0,
+          "unit": "kW",
+          "status": "normal"
+        },
+        {
+          "id": "m-caf-02",
+          "type": "water",
+          "label": "Canteen Domestic Water Supply",
+          "currentReading": 1850,
+          "unit": "L/h",
+          "status": "normal"
+        }
+      ],
+      "equipment": [
+        {
+          "id": "eq-caf-01",
+          "name": "Institutional Biogas Digester Plant",
+          "category": "waste",
+          "status": "running",
+          "powerDrawKw": 8.0,
+          "efficiencyRating": "Methane Recovery"
+        }
+      ],
+      "hourlyLoadProfile": [
+        {
+          "hour": "08:00",
+          "energyKw": 120,
+          "baselineKw": 125
+        },
+        {
+          "hour": "10:00",
+          "energyKw": 190,
+          "baselineKw": 200
+        },
+        {
+          "hour": "12:00",
+          "energyKw": 240,
+          "baselineKw": 250
+        },
+        {
+          "hour": "14:00",
+          "energyKw": 210,
+          "baselineKw": 220
+        },
+        {
+          "hour": "16:00",
+          "energyKw": 130,
+          "baselineKw": 135
+        },
+        {
+          "hour": "18:00",
+          "energyKw": 70,
+          "baselineKw": 75
+        }
+      ],
+      "alerts": [],
+      "recommendations": [
+        {
+          "id": "rec-caf-1",
+          "title": "Expand Canteen Biogas Feedstock Output",
+          "description": "Channel 100% of organic vegetable scraps to the MACE bio-methanation plant.",
+          "impact": "high",
+          "estimatedSavings": "85 kg LPG/month",
+          "category": "waste",
+          "buildingId": "bldg-caf"
+        }
+      ]
     },
     {
-      "id": "sens-14",
-      "code": "EM-MICRO-BATT",
-      "name": "BESS State of Charge",
-      "type": "energy",
-      "location": "Microgrid Battery Bay",
+      "id": "bldg-sports",
+      "name": "Indoor Stadium & Physical Education Pavilion",
+      "code": "MACE-SPORTS",
+      "category": "athletics",
       "coordinates": [
-        10.05524,
-        76.617931
+        10.0548,
+        76.6205
       ],
-      "buildingId": "bldg-microgrid",
-      "value": 86,
-      "unit": "% SoC",
-      "status": "online",
-      "lastUpdated": "Just now"
+      "polygonCoordinates": [
+        [
+          10.0551,
+          76.6202
+        ],
+        [
+          10.0551,
+          76.6208
+        ],
+        [
+          10.0545,
+          76.6208
+        ],
+        [
+          10.0545,
+          76.6202
+        ]
+      ],
+      "sustainabilityScore": 84,
+      "floorAreaSqMeters": 5400,
+      "yearBuilt": 2005,
+      "leedCertification": "Silver",
+      "solarInstalledKw": 65,
+      "metrics": {
+        "energyKwhPerDay": 1450,
+        "energyPeakKw": 130,
+        "energyChangePct": -3.0,
+        "energyBaselineKwhPerDay": 1500,
+        "wasteKgPerDay": 60,
+        "wasteDiversionPct": 86,
+        "wasteChangePct": 2.0,
+        "wasteBaselineKgPerDay": 70,
+        "waterLitersPerDay": 5200,
+        "waterChangePct": -2.2,
+        "carbonKgCo2ePerDay": 540,
+        "carbonIntensityRating": "A"
+      },
+      "meters": [
+        {
+          "id": "m-spt-01",
+          "type": "electricity",
+          "label": "Stadium Floodlight System",
+          "currentReading": 42.0,
+          "unit": "kW",
+          "status": "normal"
+        }
+      ],
+      "equipment": [],
+      "hourlyLoadProfile": [],
+      "alerts": [],
+      "recommendations": []
     }
   ],
   "wasteBins": [
@@ -1319,7 +1033,7 @@
         76.61911664648933
       ],
       "location": "Cafeteria Block A",
-      "notes": "Compostable items only. No plastics or wraps.",
+      "notes": "Compostable items only. Routed to MACE Biogas Plant.",
       "status": "near_full",
       "lastCollected": "45 mins ago"
     },
@@ -1336,7 +1050,7 @@
         76.6188653043451
       ],
       "location": "Computer Science Lab Corridor",
-      "notes": "Small electronics, batteries, and cables.",
+      "notes": "Small electronics, batteries, PCB boards, and cables.",
       "status": "normal",
       "lastCollected": "Yesterday"
     },
@@ -1370,7 +1084,7 @@
         76.61942384244338
       ],
       "location": "Central Courtyard",
-      "notes": "Accepts notebooks, clean cardboard, plastic bottles.",
+      "notes": "Accepts notebooks, clean cardboard, beverage containers.",
       "status": "full",
       "lastCollected": "5 hours ago"
     },
@@ -1387,7 +1101,7 @@
         76.61872566982055
       ],
       "location": "Mechanical Workshop Quad",
-      "notes": "Accepts notebooks, clean cardboard, plastic bottles.",
+      "notes": "Workshop recyclables, clean metal scrap, paper packaging.",
       "status": "normal",
       "lastCollected": "4 hours ago"
     },
@@ -1404,7 +1118,7 @@
         76.61985670946953
       ],
       "location": "North Parking Pathway",
-      "notes": "Accepts notebooks, clean cardboard, plastic bottles.",
+      "notes": "Commuter waste receptacle.",
       "status": "normal",
       "lastCollected": "1 hour ago"
     },
@@ -1421,7 +1135,7 @@
         76.61917250029914
       ],
       "location": "Admin Block Approach",
-      "notes": "Accepts notebooks, clean cardboard, plastic bottles.",
+      "notes": "Office papers, clean packaging, bottles.",
       "status": "near_full",
       "lastCollected": "3 hours ago"
     }
@@ -1429,442 +1143,381 @@
   "waterStations": [
     {
       "id": "ws-01",
-      "name": "Science Hall Level 1 Station",
+      "name": "Central Library Water Refill Station",
       "coordinates": [
-        10.054365,
-        76.618351
+        10.053612,
+        76.61992
       ],
-      "location": "Science & Engineering Hall L1",
-      "buildingId": "bldg-eng",
-      "bottlesSaved": 48290,
+      "location": "Library Ground Floor",
+      "buildingId": "bldg-lib",
+      "bottlesSaved": 18450,
       "filterStatus": "optimal",
-      "litersDispensed": 24145,
+      "litersDispensed": 9225,
       "status": "online"
     },
     {
       "id": "ws-02",
-      "name": "STIC Zero-Waste Fountain",
+      "name": "CSE Block Ground Floor Refill Kiosk",
       "coordinates": [
-        10.053805,
-        76.620101
+        10.05218,
+        76.61889
       ],
-      "location": "Sustainable Tech Center Atrium",
-      "buildingId": "bldg-sust",
-      "bottlesSaved": 62410,
+      "location": "CSE Dept Foyer",
+      "buildingId": "bldg-cse",
+      "bottlesSaved": 24800,
       "filterStatus": "optimal",
-      "litersDispensed": 31205,
+      "litersDispensed": 12400,
       "status": "online"
     },
     {
       "id": "ws-03",
-      "name": "Dining Commons Refill Bar",
+      "name": "Mechanical Workshop Quad Water Kiosk",
       "coordinates": [
-        10.05335,
-        76.618351
+        10.05273,
+        76.61875
       ],
-      "location": "Student Union Main Hub",
-      "buildingId": "bldg-union",
-      "bottlesSaved": 94800,
+      "location": "Workshop Entrance",
+      "buildingId": "bldg-mech",
+      "bottlesSaved": 14200,
       "filterStatus": "good",
-      "litersDispensed": 47400,
+      "litersDispensed": 7100,
       "status": "online"
     },
     {
       "id": "ws-04",
-      "name": "Library Quiet Garden Hydration",
+      "name": "Cafeteria Block A Pure Water Hub",
       "coordinates": [
-        10.05349,
-        76.619786
+        10.05315,
+        76.61914
       ],
-      "location": "Green Library Ground Floor",
-      "buildingId": "bldg-lib",
-      "bottlesSaved": 73520,
+      "location": "Dining Commons Entry",
+      "buildingId": "bldg-caf",
+      "bottlesSaved": 38600,
       "filterStatus": "optimal",
-      "litersDispensed": 36760,
-      "status": "online"
-    },
-    {
-      "id": "ws-05",
-      "name": "North Residence Community Bar",
-      "coordinates": [
-        10.05503,
-        76.619681
-      ],
-      "location": "North Residence Commons",
-      "buildingId": "bldg-res-n",
-      "bottlesSaved": 51200,
-      "filterStatus": "optimal",
-      "litersDispensed": 25600,
-      "status": "online"
-    },
-    {
-      "id": "ws-06",
-      "name": "South Residence Hydration Point",
-      "coordinates": [
-        10.05237,
-        76.618806
-      ],
-      "location": "South Heritage Hall Lobby",
-      "buildingId": "bldg-res-s",
-      "bottlesSaved": 38900,
-      "filterStatus": "replace_soon",
-      "litersDispensed": 19450,
-      "status": "online"
-    },
-    {
-      "id": "ws-07",
-      "name": "Aquatics Hydration Hub",
-      "coordinates": [
-        10.05293,
-        76.620941
-      ],
-      "location": "Sports & Aquatics Concourse",
-      "buildingId": "bldg-sport",
-      "bottlesSaved": 88400,
-      "filterStatus": "good",
-      "litersDispensed": 44200,
+      "litersDispensed": 19300,
       "status": "online"
     }
   ],
   "solarAreas": [
     {
-      "id": "solar-north-park",
-      "name": "North Commuter Canopy Solar Array",
+      "id": "solar-main",
+      "name": "MACE Main Block Rooftop Solar Array",
+      "center": [
+        10.0542,
+        76.61917
+      ],
       "coordinates": [
         [
-          10.05573,
-          76.618736
+          10.0544,
+          76.619
         ],
         [
-          10.05573,
-          76.619436
+          10.0544,
+          76.61935
         ],
         [
-          10.05531,
-          76.619436
+          10.054,
+          76.61935
         ],
         [
-          10.05531,
-          76.618736
+          10.054,
+          76.619
         ]
       ],
-      "center": [
-        10.05552,
-        76.619086
-      ],
-      "capacityKw": 450,
-      "currentOutputKw": 385,
-      "dailyProductionKwh": 2780,
-      "panelCount": 1120,
-      "efficiency": 21.8
+      "capacityKw": 150,
+      "currentOutputKw": 118,
+      "dailyProductionKwh": 720,
+      "panelCount": 380,
+      "efficiency": 21.4
     },
     {
-      "id": "solar-agrivoltaic",
-      "name": "East Arboretum Agrivoltaic Meadow",
+      "id": "solar-mech",
+      "name": "Mechanical Workshop Rooftop Solar Plant",
+      "center": [
+        10.05271,
+        76.61872
+      ],
       "coordinates": [
         [
-          10.054435,
-          76.621536
+          10.0529,
+          76.61855
         ],
         [
-          10.054435,
-          76.622061
+          10.0529,
+          76.6189
         ],
         [
-          10.053735,
-          76.622061
+          10.05255,
+          76.6189
         ],
         [
-          10.053735,
-          76.621536
+          10.05255,
+          76.61855
         ]
       ],
+      "capacityKw": 180,
+      "currentOutputKw": 142,
+      "dailyProductionKwh": 860,
+      "panelCount": 460,
+      "efficiency": 21.6
+    },
+    {
+      "id": "solar-lib",
+      "name": "Central Library Solar Installation",
       "center": [
-        10.054085,
-        76.621816
+        10.05361,
+        76.61989
       ],
-      "capacityKw": 300,
-      "currentOutputKw": 255,
-      "dailyProductionKwh": 1890,
-      "panelCount": 780,
-      "efficiency": 22.4
+      "coordinates": [
+        [
+          10.0538,
+          76.6197
+        ],
+        [
+          10.0538,
+          76.6201
+        ],
+        [
+          10.05345,
+          76.6201
+        ],
+        [
+          10.05345,
+          76.6197
+        ]
+      ],
+      "capacityKw": 120,
+      "currentOutputKw": 96,
+      "dailyProductionKwh": 580,
+      "panelCount": 310,
+      "efficiency": 21.2
     }
   ],
   "roads": [
     {
-      "id": "road-spine",
-      "name": "Eco-Boulevard Primary Axis",
+      "id": "road-mace-main",
+      "name": "MACE Main Entrance Boulevard",
       "type": "road",
       "coordinates": [
         [
-          10.055835,
-          76.619086
+          10.0555,
+          76.6192
         ],
         [
-          10.05461,
-          76.619086
+          10.0545,
+          76.61918
         ],
         [
-          10.053735,
-          76.619086
+          10.0538,
+          76.61915
         ],
         [
-          10.051985,
-          76.619086
+          10.0525,
+          76.6191
         ]
       ]
     },
     {
-      "id": "road-cross",
-      "name": "Innovation Promenade",
-      "type": "pedestrian",
-      "coordinates": [
-        [
-          10.053735,
-          76.617511
-        ],
-        [
-          10.053735,
-          76.619086
-        ],
-        [
-          10.053735,
-          76.621361
-        ]
-      ]
-    },
-    {
-      "id": "road-north-loop",
-      "name": "Science Ring Walkway",
-      "type": "pedestrian",
-      "coordinates": [
-        [
-          10.05461,
-          76.617861
-        ],
-        [
-          10.05461,
-          76.620311
-        ],
-        [
-          10.05531,
-          76.620311
-        ]
-      ]
-    },
-    {
-      "id": "bike-perimeter",
-      "name": "Greenway Commuter Bike Trail",
+      "id": "road-library-axis",
+      "name": "Library & East Campus Pathway",
       "type": "bike_path",
       "coordinates": [
         [
-          10.05566,
-          76.617336
+          10.0538,
+          76.61915
         ],
         [
-          10.05321,
-          76.617336
+          10.0537,
+          76.6196
         ],
         [
-          10.05181,
-          76.618211
+          10.0536,
+          76.6201
+        ]
+      ]
+    },
+    {
+      "id": "road-workshop-loop",
+      "name": "Mechanical Workshop Ring Way",
+      "type": "road",
+      "coordinates": [
+        [
+          10.0531,
+          76.6191
         ],
         [
-          10.05181,
-          76.621361
+          10.0528,
+          76.6187
         ],
         [
-          10.05356,
-          76.622236
+          10.0523,
+          76.61865
         ],
         [
-          10.05566,
-          76.622236
+          10.052,
+          76.619
         ]
       ]
     }
   ],
   "greenAreas": [
     {
-      "id": "green-central",
-      "name": "Campus Central Bioswale & Meadow",
+      "id": "green-mace-quad",
+      "name": "MACE Central Quadrangle & Rain Garden",
       "type": "bioswale",
+      "areaSqM": 3800,
       "coordinates": [
         [
-          10.054085,
-          76.618561
+          10.0535,
+          76.6192
         ],
         [
-          10.054085,
-          76.619436
+          10.0535,
+          76.61955
         ],
         [
-          10.05356,
-          76.619436
+          10.0531,
+          76.61955
         ],
         [
-          10.05356,
-          76.618561
+          10.0531,
+          76.6192
         ]
-      ],
-      "areaSqM": 14500
+      ]
     },
     {
-      "id": "green-arboretum",
-      "name": "Verdant Botanical Arboretum",
-      "type": "arboretum",
+      "id": "green-hillside",
+      "name": "Western Ghats Foothills Natural Arboretum",
+      "type": "meadow",
+      "areaSqM": 8500,
       "coordinates": [
         [
-          10.05496,
-          76.620661
+          10.0552,
+          76.6175
         ],
         [
-          10.05496,
-          76.621711
+          10.0552,
+          76.6184
         ],
         [
-          10.053385,
-          76.621711
+          10.0543,
+          76.6184
         ],
         [
-          10.053385,
-          76.620661
+          10.0543,
+          76.6175
         ]
-      ],
-      "areaSqM": 22000
-    },
-    {
-      "id": "green-south-park",
-      "name": "Heritage Oak Grove & Rain Garden",
-      "type": "park",
-      "coordinates": [
-        [
-          10.052685,
-          76.617686
-        ],
-        [
-          10.052685,
-          76.618386
-        ],
-        [
-          10.051985,
-          76.618386
-        ],
-        [
-          10.051985,
-          76.617686
-        ]
-      ],
-      "areaSqM": 8800
+      ]
     }
   ],
   "alerts": [
     {
-      "id": "alert-1",
-      "severity": "critical",
-      "title": "Continuous Restroom Water Leak",
-      "description": "Main wing riser water meter shows unbroken baseline flow of 14.2 L/min overnight.",
-      "category": "water",
-      "buildingId": "bldg-res-s",
-      "buildingName": "South Heritage Hall",
-      "timestamp": "1 hour ago",
-      "status": "active"
-    },
-    {
-      "id": "alert-2",
+      "id": "alt-1",
+      "title": "Mechanical Workshop Heavy Motor Peak Demand Surge",
       "severity": "warning",
-      "title": "HVAC Chiller Surge Detected",
-      "description": "Cleanroom laboratory AC units on 3rd floor registered a 14% power surge between 13:00 and 15:00.",
       "category": "energy",
-      "buildingId": "bldg-eng",
-      "buildingName": "Science & Engineering Hall",
-      "timestamp": "2 hours ago",
-      "status": "active"
+      "timestamp": "45 mins ago",
+      "status": "active",
+      "buildingId": "bldg-mech",
+      "buildingName": "Mechanical Engineering Workshops"
     },
     {
-      "id": "alert-3",
+      "id": "alt-2",
+      "title": "Central Courtyard Waste Bin Requires Prompt Emptying",
       "severity": "warning",
-      "title": "High Food Organic Waste Contamination",
-      "description": "Trash stream sensor bin B-04 detected 24% organic matter in general landfill bin.",
       "category": "waste",
-      "buildingId": "bldg-union",
-      "buildingName": "Student Union & Dining Commons",
-      "timestamp": "4 hours ago",
-      "status": "active"
-    },
-    {
-      "id": "alert-4",
-      "severity": "warning",
-      "title": "Olympic Pool Heating Surge",
-      "description": "Pool thermal cover was not engaged overnight, causing a 35% natural gas heating spike.",
-      "category": "energy",
-      "buildingId": "bldg-sport",
-      "buildingName": "Sports & Aquatics Complex",
-      "timestamp": "5 hours ago",
-      "status": "active"
-    },
-    {
-      "id": "alert-5",
-      "severity": "info",
-      "title": "Optimal Solar Generation Period",
-      "description": "Solar microgrid exceeding 640 kW generation. Battery energy storage system charging at 94% efficiency.",
-      "category": "energy",
-      "buildingId": "bldg-microgrid",
-      "buildingName": "Central Energy & Microgrid Plant",
-      "timestamp": "Just now",
-      "status": "active"
+      "timestamp": "1 hour ago",
+      "status": "active",
+      "buildingId": "bldg-caf",
+      "buildingName": "College Canteen & Amenities"
     }
   ],
   "recommendations": [
     {
       "id": "rec-1",
-      "title": "Shift HVAC Pre-Cooling in Research Centers",
-      "description": "Pre-cool Science & Engineering Hall by 1.5\u00b0C during high-solar generation hours (11:00-14:00) to flatten grid peak draw.",
+      "title": "Expand Canteen Biogas Feedstock Output",
+      "description": "Channel 100% of organic food waste to MACE institutional bio-methanation plant to offset LPG cylinders.",
       "impact": "high",
-      "estimatedSavings": "$4,200/mo & 8.4 Tons CO2e",
-      "category": "energy",
-      "buildingId": "bldg-eng",
-      "actionableStep": "Enable automated precooling rule in EcoTwin BMS connector."
+      "estimatedSavings": "85 kg LPG/month",
+      "category": "waste"
     },
     {
       "id": "rec-2",
-      "title": "Repair South Hall Plumbing Riser Leak",
-      "description": "Dispatch immediate plumbing inspection to South Heritage Hall B1 to fix the 14.2 L/min continuous leak.",
+      "title": "Automate CSE Computer Lab Power Down",
+      "description": "Implement power management daemon across 240 laboratory workstations during non-class periods.",
       "impact": "high",
-      "estimatedSavings": "20,400 L/day Water ($860/mo)",
-      "category": "water",
-      "buildingId": "bldg-res-s",
-      "actionableStep": "Issue emergency facilities work order #WO-8921."
+      "estimatedSavings": "65 kWh/day",
+      "category": "energy"
     },
     {
       "id": "rec-3",
-      "title": "Install AI Optical Sorting Cameras at Dining Terraces",
-      "description": "Add real-time optical sorting prompts at Student Union bins to reduce compost contamination from 24% down to under 5%.",
+      "title": "Add Floating Aerators to Rainwater Catchment Pond",
+      "description": "Enhance natural water filtration before feeding into the secondary campus irrigation lines.",
       "impact": "medium",
-      "estimatedSavings": "2.5 Tonnes Waste/Month Diverted",
-      "category": "waste",
-      "buildingId": "bldg-union",
-      "actionableStep": "Deploy EcoTwin Vision pilot on bins WB-04 to WB-06."
+      "estimatedSavings": "12,000 L water/day",
+      "category": "water"
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sens-01",
+      "code": "MACE-ENV-01",
+      "name": "MACE Central Ambient Air Node",
+      "type": "air_quality",
+      "location": "Admin Block Quad",
+      "coordinates": [
+        10.0541,
+        76.6192
+      ],
+      "value": 22,
+      "unit": "AQI",
+      "status": "online",
+      "lastUpdated": "Just now"
     },
     {
-      "id": "rec-4",
-      "title": "Deploy Automated Night Pool Thermal Covers",
-      "description": "Schedule automated motorized thermal blanket on the Olympic pool at 21:00 nightly.",
-      "impact": "high",
-      "estimatedSavings": "$1,850/mo Energy & 4,000 L Water",
-      "category": "energy",
-      "buildingId": "bldg-sport",
-      "actionableStep": "Integrate pool cover relay switch to facility close timer."
+      "id": "sens-02",
+      "code": "MACE-SOL-01",
+      "name": "Main Rooftop Solar Irradiance Meter",
+      "type": "solar",
+      "location": "Admin Block Roof",
+      "coordinates": [
+        10.05425,
+        76.61918
+      ],
+      "value": 790,
+      "unit": "W/m\u00b2",
+      "status": "online",
+      "lastUpdated": "Just now"
     },
     {
-      "id": "rec-5",
-      "title": "Campus-wide LED Lighting Retrofit Phase 2",
-      "description": "Replace remaining fluorescent fixtures in South Heritage Hall and Athletics corridors with smart sensor LEDs.",
-      "impact": "medium",
-      "estimatedSavings": "18% Lighting Energy (~$2,600/mo)",
-      "category": "energy",
-      "buildingId": "bldg-res-s",
-      "actionableStep": "Approve procurement proposal for 850 LED tubes."
+      "id": "sens-03",
+      "code": "MACE-PWR-01",
+      "name": "Mechanical Workshop Power Meter",
+      "type": "energy",
+      "location": "Workshop Substation",
+      "coordinates": [
+        10.05275,
+        76.61874
+      ],
+      "value": 185,
+      "unit": "kW",
+      "status": "warning",
+      "lastUpdated": "Just now"
+    },
+    {
+      "id": "sens-04",
+      "code": "MACE-HPC-01",
+      "name": "CSE HPC Server Room Temperature",
+      "type": "temperature",
+      "location": "CSE Block Level 2",
+      "coordinates": [
+        10.0522,
+        76.61887
+      ],
+      "value": 20.5,
+      "unit": "\u00b0C",
+      "status": "online",
+      "lastUpdated": "Just now"
     }
   ]
 }

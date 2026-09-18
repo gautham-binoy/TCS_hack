@@ -46,11 +46,11 @@ export const AIPage: React.FC<AIPageProps> = ({
   const [history, setHistory] = useState<QueryHistoryItem[]>([]);
 
   const suggestedQuestions = [
-    'Which building consumes the most energy?',
-    'Why is energy consumption high?',
-    'What areas need attention?',
-    'Where are the waste bins?',
-    'How can we reduce energy consumption?',
+    'Which building consumes the most energy at MACE?',
+    'Where are the waste bins on MACE campus?',
+    'What is the current solar output across MACE rooftops?',
+    'Why is Mechanical Workshop energy demand high?',
+    'How can MACE achieve net-zero carbon emissions?',
   ];
 
   // If a building is selected, trigger an initial automated analysis if no response yet
@@ -109,10 +109,10 @@ export const AIPage: React.FC<AIPageProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Campus Intelligence
+            MACE Campus Intelligence
           </h1>
           <p className="text-emerald-100/80 text-sm sm:text-base leading-relaxed">
-            Ask anything about your campus. Real-time telemetry synthesis, root-cause anomaly detection, and predictive conservation recommendations.
+            Ask anything about Mar Athanasius College of Engineering. Real-time telemetry synthesis, root-cause anomaly detection, and Gemini-powered conservation insights.
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export const AIPage: React.FC<AIPageProps> = ({
               </div>
             ) : (
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 text-emerald-200 border border-slate-700 font-semibold">
-                <span>Entire Campus (All 9 Facilities)</span>
+                <span>Entire MACE Campus (All 9 Blocks & Facilities)</span>
               </div>
             )}
           </div>

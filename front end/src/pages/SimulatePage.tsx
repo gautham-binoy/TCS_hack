@@ -62,8 +62,8 @@ export const SimulatePage: React.FC<SimulatePageProps> = ({ buildings }) => {
     },
     {
       id: 'scenario-solar-park',
-      title: 'North Parking Solar Canopy (+250 kW)',
-      description: 'Install 250 kW photovoltaic shade structures with EV charger integration.',
+      title: 'MACE Campus Solar Expansion (+250 kW)',
+      description: 'Install 250 kW photovoltaic canopy with EV charging stations across MACE parking areas.',
       defaults: { elec: 6.2, waste: 0, led: 0, solar: 250 },
     },
   ];
@@ -152,14 +152,14 @@ export const SimulatePage: React.FC<SimulatePageProps> = ({ buildings }) => {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-              What-If Scenario Simulator
+              MACE What-If Scenario Simulator
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
               Predictive Twin
             </span>
           </div>
           <p className="text-sm text-slate-500 mt-1">
-            Simulate campus-wide sustainability interventions and evaluate forecasted energy, waste, and carbon impact.
+            Simulate campus-wide sustainability interventions across MACE engineering blocks and evaluate forecasted energy, waste, and carbon impact.
           </p>
         </div>
 

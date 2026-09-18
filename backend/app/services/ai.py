@@ -29,10 +29,10 @@ class AIService:
         if not self.gemini_key:
             return None
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.gemini_model}:generateContent?key={self.gemini_key}"
         system_prompt = f"""
-You are the AI assistant for Campus EcoTwin. 
-Use the following JSON context representing the current state of the campus to answer the user's question.
+You are the AI sustainability assistant for MACE EcoTwin at Mar Athanasius College of Engineering (MACE), Kothamangalam, Kerala, India.
+Use the following real-time JSON context representing the current state of the MACE campus (buildings, waste bins, solar plants, water stations, air sensors) to answer the user's question accurately.
+Provide actionable sustainability insights, specific building names, and precise data points whenever relevant.
 Return ONLY a raw JSON object (no markdown formatting, no code blocks, no backticks) with this structure:
 {{
     "answer": "string",
@@ -56,30 +56,42 @@ Context Data: {json.dumps(context_data, default=str)}
             }
         }
         headers = {"Content-Type": "application/json"}
-        if self.gemini_key.startswith("AQ."):
-            headers["Authorization"] = f"Bearer {self.gemini_key}"
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.gemini_model}:generateContent"
 
-        try:
-            import httpx
-            with httpx.Client(timeout=25.0) as client:
-                resp = client.post(url, json=payload, headers=headers)
-                if resp.status_code == 200:
-                    data = resp.json()
-                    candidates = data.get("candidates", [])
-                    if candidates:
-                        parts = candidates[0].get("content", {}).get("parts", [])
-                        if parts:
-                            raw_text = parts[0].get("text", "").strip()
-                            if raw_text.startswith("```json"):
-                                raw_text = raw_text[7:]
-                            if raw_text.endswith("```"):
-                                raw_text = raw_text[:-3]
-                            return self._sanitize_response(json.loads(raw_text.strip()))
-                else:
-                    print(f"[AIService] Gemini API returned status {resp.status_code}: {resp.text}")
-        except Exception as e:
-            print(f"[AIService] Gemini request failed: {e}")
+        # Candidate models to try in order of preference
+        models_to_try = [
+            self.gemini_model,
+            "gemini-3.1-flash-lite",
+            "gemini-2.5-flash",
+            "gemini-flash-latest"
+        ]
+        # Remove duplicates while preserving order
+        candidate_models = list(dict.fromkeys(models_to_try))
+
+        import httpx
+        for model_name in candidate_models:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={self.gemini_key}"
+            try:
+                with httpx.Client(timeout=30.0) as client:
+                    resp = client.post(url, json=payload, headers=headers)
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        candidates = data.get("candidates", [])
+                        if candidates:
+                            parts = candidates[0].get("content", {}).get("parts", [])
+                            if parts:
+                                raw_text = parts[0].get("text", "").strip()
+                                if raw_text.startswith("```json"):
+                                    raw_text = raw_text[7:]
+                                elif raw_text.startswith("```"):
+                                    raw_text = raw_text[3:]
+                                if raw_text.endswith("```"):
+                                    raw_text = raw_text[:-3]
+                                parsed = json.loads(raw_text.strip())
+                                return self._sanitize_response(parsed)
+                    else:
+                        print(f"[AIService] Gemini API ({model_name}) returned status {resp.status_code}: {resp.text[:200]}")
+            except Exception as e:
+                print(f"[AIService] Gemini request ({model_name}) failed: {e}")
         return None
 
     def process_query(self, query: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:

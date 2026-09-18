@@ -67,12 +67,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-bold text-lg text-slate-900 tracking-tight">Campus EcoTwin</span>
+                  <span className="font-bold text-lg text-slate-900 tracking-tight">MACE EcoTwin</span>
                   <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200/60">
                     Live Twin
                   </span>
                 </div>
-                <p className="text-xs text-slate-500 hidden sm:block">Sustainability Intelligence & Simulation</p>
+                <p className="text-xs text-slate-500 hidden sm:block">Mar Athanasius College of Engineering, Kothamangalam</p>
               </div>
             </button>
           </div>
