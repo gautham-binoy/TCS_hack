@@ -12,10 +12,9 @@ import {
   Clock,
   ArrowRight,
   ExternalLink,
-  RotateCcw,
   X,
 } from 'lucide-react';
-import { Building, AIQueryResponse, AILocationReference } from '../types';
+import { Building, AIQueryResponse } from '../types';
 import { api } from '../services/api';
 
 interface AIPageProps {

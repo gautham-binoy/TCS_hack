@@ -33,7 +33,7 @@ export const App: React.FC = () => {
   const [greenAreas, setGreenAreas] = useState<CampusGreenArea[]>([]);
   const [metrics, setMetrics] = useState<OverallMetrics | null>(null);
   const [alerts, setAlerts] = useState<Alert[]>([]);
-  const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
+  const [, setRecommendations] = useState<Recommendation[]>([]);
 
   // Selection & Context States
   const [activeBuilding, setActiveBuilding] = useState<Building | null>(null);

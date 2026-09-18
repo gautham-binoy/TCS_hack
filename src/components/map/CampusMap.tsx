@@ -17,7 +17,6 @@ import {
   Radio,
   Search,
   RotateCcw,
-  Sun,
   Layers,
   Check,
 } from 'lucide-react';
@@ -58,7 +57,7 @@ const MapController: React.FC<{
 };
 
 // Create custom SVG-based Leaflet DivIcons
-const createSensorIcon = (type: Sensor['type'], status: Sensor['status']) => {
+const createSensorIcon = (_type: Sensor['type'], status: Sensor['status']) => {
   const statusColor =
     status === 'online' ? '#10b981' : status === 'warning' ? '#f59e0b' : '#ef4444';
   const pulseClass = status === 'online' ? 'pulse-sensor' : '';

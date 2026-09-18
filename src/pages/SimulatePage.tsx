@@ -5,17 +5,14 @@ import {
   RotateCcw,
   Zap,
   Trash2,
-  Droplets,
   CloudSun,
   DollarSign,
   TreeDeciduous,
   Car,
   Home,
   AlertCircle,
-  Sparkles,
   CheckCircle2,
   TrendingDown,
-  Building2,
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -25,7 +22,6 @@ import {
   YAxis,
   Tooltip,
   CartesianGrid,
-  Legend,
 } from 'recharts';
 import { SimulationResponse, Building } from '../types';
 import { api } from '../services/api';

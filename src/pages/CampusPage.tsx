@@ -13,7 +13,7 @@ import {
   LayerType,
   CampusOverview,
 } from '../types';
-import { Sun, Wind, Bell, AlertTriangle } from 'lucide-react';
+import { Sun, Wind, AlertTriangle } from 'lucide-react';
 
 interface CampusPageProps {
   campus: CampusOverview | null;

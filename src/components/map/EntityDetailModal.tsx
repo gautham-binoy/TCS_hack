@@ -5,11 +5,8 @@ import {
   Trash2,
   Droplets,
   Sun,
-  Activity,
-  AlertTriangle,
   Clock,
   MapPin,
-  CheckCircle2,
 } from 'lucide-react';
 import { Sensor, WasteBin, WaterStation, SolarArea } from '../../types';
 

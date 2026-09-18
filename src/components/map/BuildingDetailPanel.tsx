@@ -8,7 +8,6 @@ import {
   CloudSun,
   AlertTriangle,
   Lightbulb,
-  Building2,
   Calendar,
   Award,
   Maximize2,

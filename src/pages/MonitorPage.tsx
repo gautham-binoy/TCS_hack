@@ -8,14 +8,8 @@ import {
   Radio,
   AlertTriangle,
   ArrowUpRight,
-  ArrowDownRight,
-  TrendingDown,
   TrendingUp,
   Award,
-  ChevronRight,
-  Filter,
-  CheckCircle2,
-  ExternalLink,
 } from 'lucide-react';
 import {
   ResponsiveContainer,
