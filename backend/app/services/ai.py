@@ -10,33 +10,98 @@ waste_bin_repo = WasteBinRepository()
 
 class AIService:
     def __init__(self):
-        api_key = settings.groq_api_key or settings.ai_api_key
-        # Only initialize Groq if a Groq key (starts with gsk_) or non-empty key is provided
+        self.gemini_key = settings.gemini_api_key or (settings.ai_api_key if not settings.ai_api_key.startswith("gsk_") else "")
+        self.gemini_model = settings.gemini_model or "gemini-1.5-flash"
+
+        # Initialize Groq if Groq key is present
+        groq_key = settings.groq_api_key or (settings.ai_api_key if settings.ai_api_key.startswith("gsk_") else "")
         self.client = None
         self.model = settings.groq_model
-        if api_key and api_key.strip():
+        if groq_key and groq_key.strip():
             try:
                 from groq import Groq
-                self.client = Groq(api_key=api_key)
+                self.client = Groq(api_key=groq_key)
             except Exception as e:
                 print(f"[AIService] Warning: Could not initialize Groq client: {e}")
                 self.client = None
 
+    def _query_gemini(self, query: str, context_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        if not self.gemini_key:
+            return None
+
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.gemini_model}:generateContent?key={self.gemini_key}"
+        system_prompt = f"""
+You are the AI assistant for Campus EcoTwin. 
+Use the following JSON context representing the current state of the campus to answer the user's question.
+Return ONLY a raw JSON object (no markdown formatting, no code blocks, no backticks) with this structure:
+{{
+    "answer": "string",
+    "locations": [{{"id": "string", "name": "string", "type": "building", "coordinates": [float, float], "highlightMetric": "string"}}],
+    "metrics": [{{"label": "string", "value": "string", "change": "string", "status": "positive|negative|warning|neutral"}}],
+    "recommendations": ["string"],
+    "alerts": ["string"]
+}}
+Context Data: {json.dumps(context_data, default=str)}
+"""
+        payload = {
+            "contents": [
+                {
+                    "role": "user",
+                    "parts": [{"text": f"{system_prompt}\n\nUser Question: {query}"}]
+                }
+            ],
+            "generationConfig": {
+                "responseMimeType": "application/json",
+                "temperature": 0.2
+            }
+        }
+        headers = {"Content-Type": "application/json"}
+        if self.gemini_key.startswith("AQ."):
+            headers["Authorization"] = f"Bearer {self.gemini_key}"
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.gemini_model}:generateContent"
+
+        try:
+            import httpx
+            with httpx.Client(timeout=25.0) as client:
+                resp = client.post(url, json=payload, headers=headers)
+                if resp.status_code == 200:
+                    data = resp.json()
+                    candidates = data.get("candidates", [])
+                    if candidates:
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        if parts:
+                            raw_text = parts[0].get("text", "").strip()
+                            if raw_text.startswith("```json"):
+                                raw_text = raw_text[7:]
+                            if raw_text.endswith("```"):
+                                raw_text = raw_text[:-3]
+                            return self._sanitize_response(json.loads(raw_text.strip()))
+                else:
+                    print(f"[AIService] Gemini API returned status {resp.status_code}: {resp.text}")
+        except Exception as e:
+            print(f"[AIService] Gemini request failed: {e}")
+        return None
+
     def process_query(self, query: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         building_id = context.get("buildingId") if context else None
         
-        # If real LLM client is available, attempt real inference
+        buildings = building_repo.get_all()
+        waste_bins = waste_bin_repo.get_all()
+        context_data = {
+            "buildings": buildings,
+            "waste_bins": waste_bins,
+            "user_context": context
+        }
+
+        # 1. Attempt Gemini if configured
+        if self.gemini_key:
+            gemini_res = self._query_gemini(query, context_data)
+            if gemini_res:
+                return gemini_res
+
+        # 2. Attempt Groq if configured
         if self.client:
             try:
-                buildings = building_repo.get_all()
-                waste_bins = waste_bin_repo.get_all()
-                
-                context_data = {
-                    "buildings": buildings,
-                    "waste_bins": waste_bins,
-                    "user_context": context
-                }
-                
                 system_prompt = f"""
 You are the AI assistant for Campus EcoTwin. 
 Use the following JSON context representing the current state of the campus to answer the user's question.
@@ -66,7 +131,7 @@ Context Data: {json.dumps(context_data, default=str)}
             except Exception as e:
                 print(f"[AIService] LLM call failed, switching to deterministic domain analytics: {e}")
 
-        # Deterministic Domain Analytics Fallback (guarantees high fidelity even without external API key)
+        # 3. Deterministic Domain Analytics Fallback (guarantees high fidelity even without external API key)
         return self._generate_domain_response(query, building_id)
 
     def _sanitize_response(self, parsed: Dict[str, Any]) -> Dict[str, Any]:

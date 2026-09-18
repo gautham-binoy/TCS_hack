@@ -116,9 +116,10 @@ The React development server will start at `http://localhost:3000`.
 |---|---|---|
 | `PORT` | `8000` | Server listening port |
 | `FRONTEND_URL` | `http://localhost:5173` | Allowed CORS origin (Vite defaults: 3000 & 5173 supported) |
-| `GROQ_API_KEY` | *(Optional)* | Groq API Key for live LLM chat inference |
+| `GEMINI_API_KEY` | *(Optional)* | Google Gemini API Key for live AI queries |
+| `GEMINI_MODEL` | `gemini-1.5-flash` | Gemini model (e.g. `gemini-1.5-flash`, `gemini-2.0-flash`) |
+| `GROQ_API_KEY` | *(Optional)* | Optional Groq API Key fallback |
 | `GROQ_MODEL` | `llama3-8b-8192` | Model identifier for Groq inference |
-| `AI_API_KEY` | *(Optional)* | Alternative API Key fallback for AI services |
 
 > **Note**: The backend features a built-in deterministic campus analytics engine that generates domain-specific AI intelligence responses even when external API keys are omitted.
 
