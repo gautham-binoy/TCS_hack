@@ -1,6 +1,6 @@
 from typing import Dict, Any
 import math
-from app.data.mock_db import db
+from app.db import db
 
 class SimulationService:
     def run_simulation(self, request: Dict[str, Any]) -> Dict[str, Any]:
@@ -10,10 +10,10 @@ class SimulationService:
         baseline_carbon_tonnes = 3010
         baseline_cost_dollars = 1632000
         
-        electricity_pct = request.get("electricityReductionPct", 0)
-        waste_pct = request.get("wasteReductionPct", 0)
-        led_pct = request.get("ledReplacementPct", 0)
-        solar_kw = request.get("solarAdditionKw", 0)
+        electricity_pct = float(request.get("electricityReductionPct") or 0)
+        waste_pct = float(request.get("wasteReductionPct") or 0)
+        led_pct = float(request.get("ledReplacementPct") or 0)
+        solar_kw = float(request.get("solarAdditionKw") or 0)
         scenario_id = request.get("scenarioId")
         building_id = request.get("buildingId")
         
@@ -21,21 +21,21 @@ class SimulationService:
         
         if scenario_id == 'scenario-elec-10':
             scenario_title = 'Reduce Electricity by 10%'
-            electricity_pct = 10
+            electricity_pct = 10.0
         elif scenario_id == 'scenario-waste-20':
             scenario_title = 'Reduce Plastic & Solid Waste by 20%'
-            waste_pct = 20
+            waste_pct = 20.0
         elif scenario_id == 'scenario-led':
             scenario_title = 'Replace Conventional Lights with LEDs'
-            led_pct = 65
+            led_pct = 65.0
             electricity_pct = 8.5
         elif scenario_id == 'scenario-solar-park':
             scenario_title = 'North Parking Solar Canopy Expansion'
-            solar_kw = 250
+            solar_kw = 250.0
             electricity_pct = 6.2
             
-        effective_energy_pct = min(35, electricity_pct + (led_pct * 0.12) + (6.2 if solar_kw else 0))
-        effective_waste_pct = min(50, waste_pct)
+        effective_energy_pct = min(35.0, electricity_pct + (led_pct * 0.12) + (6.2 if solar_kw else 0))
+        effective_waste_pct = min(50.0, waste_pct)
         effective_water_pct = 8.5 if building_id else 4.2
         
         energy_reduced_kwh = round(baseline_energy_kwh * (effective_energy_pct / 100))
@@ -55,7 +55,7 @@ class SimulationService:
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         timeline = []
         for idx, m in enumerate(months):
-            ramp_factor = min(1, (idx + 2) / 6)
+            ramp_factor = min(1.0, (idx + 2) / 6.0)
             month_baseline_energy = round(baseline_energy_kwh / 12)
             month_projected_energy = round(month_baseline_energy - ((energy_reduced_kwh / 12) * ramp_factor))
             month_baseline_carbon = round(baseline_carbon_tonnes / 12)

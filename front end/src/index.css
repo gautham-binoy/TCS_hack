@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Leaflet Map styling for modern light UI */
+.leaflet-container {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  background: #f1f5f9;
+  z-index: 10;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  padding: 0;
+  border: 1px solid #e2e8f0;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.leaflet-bar {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06) !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.leaflet-bar a:hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Pulse keyframes for live sensors */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.pulse-sensor {
+  animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom slim scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom icon styling from Campus Waste Bin Locator */
+.bin-icon {
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid #2e7d32;
+  text-align: center;
+  line-height: 28px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.bin-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+

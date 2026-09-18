@@ -5,6 +5,7 @@ from app.services.simulation import SimulationService
 router = APIRouter()
 simulation_service = SimulationService()
 
+@router.post("", response_model=SimulationResponse)
 @router.post("/", response_model=SimulationResponse)
 def run_simulation(request: SimulationRequest):
     try:
