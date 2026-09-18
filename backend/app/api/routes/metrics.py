@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from app.repositories.base import MetricsRepository
+from app.data.mock_db import db
 
 router = APIRouter()
-metrics_repo = MetricsRepository()
 
 @router.get("/")
 def get_metrics():
-    return metrics_repo.get_metrics()
+    return db.get_campus_metrics()

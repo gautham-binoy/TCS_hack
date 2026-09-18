@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from app.repositories.base import RecommendationRepository
+from app.data.mock_db import db
 
 router = APIRouter()
-rec_repo = RecommendationRepository()
 
 @router.get("/")
 def get_recommendations():
-    return rec_repo.get_all()
+    return db.recommendations

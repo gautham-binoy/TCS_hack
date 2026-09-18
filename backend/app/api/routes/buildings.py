@@ -1,18 +1,15 @@
 from fastapi import APIRouter, HTTPException
-from typing import List
-from app.schemas.buildings import BuildingDetail
-from app.repositories.base import BuildingRepository
+from app.data.mock_db import db
 
 router = APIRouter()
-building_repo = BuildingRepository()
 
 @router.get("/")
 def get_buildings():
-    return building_repo.get_all()
+    return db.buildings
 
 @router.get("/{building_id}")
 def get_building(building_id: str):
-    building = building_repo.get_by_id(building_id)
-    if not building:
-        raise HTTPException(status_code=404, detail="Building not found")
-    return building
+    for b in db.buildings:
+        if b["id"] == building_id:
+            return b
+    raise HTTPException(status_code=404, detail="Building not found")

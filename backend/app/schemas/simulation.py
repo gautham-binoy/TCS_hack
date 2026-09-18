@@ -2,12 +2,19 @@ from pydantic import BaseModel
 from typing import Optional, Dict, Any, List
 
 class SimulationRequest(BaseModel):
-    scenario: str
-    value: float
+    scenarioId: Optional[str] = None
     buildingId: Optional[str] = None
+    electricityReductionPct: Optional[float] = None
+    wasteReductionPct: Optional[float] = None
+    ledReplacementPct: Optional[float] = None
+    solarAdditionKw: Optional[float] = None
 
 class SimulationResponse(BaseModel):
-    current: Dict[str, Any]
-    projected: Dict[str, Any]
-    impact: Dict[str, Any]
-    assumptions: List[str]
+    scenarioTitle: str
+    scopeLabel: str
+    currentValue: Dict[str, Any]
+    projectedValue: Dict[str, Any]
+    estimatedReduction: Dict[str, Any]
+    estimatedCarbonImpact: Dict[str, Any]
+    timeline: List[Dict[str, Any]]
+    methodologyNote: str

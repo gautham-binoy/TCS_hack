@@ -4,5 +4,5 @@ from app.data.mock_db import db
 router = APIRouter()
 
 @router.get("/")
-def get_alerts():
-    return db.alerts
+def get_water_stations():
+    return db.water_stations

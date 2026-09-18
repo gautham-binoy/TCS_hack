@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from app.repositories.base import SensorRepository
+from app.data.mock_db import db
 
 router = APIRouter()
-sensor_repo = SensorRepository()
 
 @router.get("/")
 def get_sensors():
-    return sensor_repo.get_all()
+    return db.sensors

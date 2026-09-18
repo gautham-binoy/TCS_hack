@@ -24,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-from app.api.routes import campus, buildings, sensors, waste_bins, metrics, alerts, recommendations, ai, simulation, iot
+from app.api.routes import campus, buildings, sensors, waste_bins, metrics, alerts, recommendations, ai, simulation, iot, water_stations, solar_areas, roads, green_areas
 
 app.include_router(campus.router, prefix="/api/campus", tags=["Campus"])
 app.include_router(buildings.router, prefix="/api/buildings", tags=["Buildings"])
@@ -36,6 +36,10 @@ app.include_router(recommendations.router, prefix="/api/recommendations", tags=[
 app.include_router(ai.router, prefix="/api/ai", tags=["AI"])
 app.include_router(simulation.router, prefix="/api/simulation", tags=["Simulation"])
 app.include_router(iot.router, prefix="/api/iot", tags=["IoT"])
+app.include_router(water_stations.router, prefix="/api/water-stations", tags=["Water Stations"])
+app.include_router(solar_areas.router, prefix="/api/solar-areas", tags=["Solar Areas"])
+app.include_router(roads.router, prefix="/api/roads", tags=["Roads"])
+app.include_router(green_areas.router, prefix="/api/green-areas", tags=["Green Areas"])
 
 @app.get("/")
 def read_root():

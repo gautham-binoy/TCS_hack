@@ -162,14 +162,78 @@ export const api = {
 
   // POST /api/ai/query
   async queryAI(payload: AIQueryRequest): Promise<AIQueryResponse> {
-    return request<AIQueryResponse>(
-      '/api/ai/query',
-      {
-        method: 'POST',
-        body: JSON.stringify(payload),
-      },
-      () => mockApiService.queryAI(payload)
-    );
+    const geminiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!geminiKey) {
+      console.warn("No VITE_GEMINI_API_KEY provided. Falling back to mock.");
+      return mockApiService.queryAI(payload);
+    }
+    try {
+      const { GoogleGenerativeAI } = await import('@google/generative-ai');
+      const genAI = new GoogleGenerativeAI(geminiKey);
+      const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
+
+      const contextData = {
+        buildingId: payload.buildingId || "Campus-Wide",
+      };
+
+      const systemPrompt = `
+You are the AI assistant for Campus EcoTwin. 
+Answer the user's question regarding sustainability. 
+Return ONLY a valid JSON object matching exactly this structure (no markdown formatting, no code blocks):
+{
+    "answer": "string",
+    "locations": [],
+    "metrics": [],
+    "recommendations": [],
+    "alerts": []
+}
+Context Data: ${JSON.stringify(contextData)}
+`;
+
+      const result = await model.generateContent([
+        { text: systemPrompt },
+        { text: payload.query }
+      ]);
+      const response = await result.response;
+      let text = response.text();
+      text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      let parsed: any;
+      try {
+        parsed = JSON.parse(text);
+      } catch(e) {
+        throw new Error("Invalid JSON from AI");
+      }
+
+      // Provide ultra-safe defaults so React doesn't crash on hallucinated formats
+      const safeResponse: AIQueryResponse = {
+        answer: typeof parsed.answer === 'string' ? parsed.answer : "I couldn't generate a proper response.",
+        locations: Array.isArray(parsed.locations) ? parsed.locations.map((loc: any) => ({
+          id: loc?.id || `loc-${Math.random()}`,
+          name: loc?.name || 'Unknown Location',
+          type: typeof loc?.type === 'string' ? loc.type : 'building',
+          coordinates: Array.isArray(loc?.coordinates) ? loc.coordinates : [0, 0],
+          highlightMetric: typeof loc?.highlightMetric === 'string' ? loc.highlightMetric : undefined
+        })) : [],
+        metrics: Array.isArray(parsed.metrics) ? parsed.metrics.map((m: any) => ({
+          label: m?.label || 'Metric',
+          value: m?.value || 'N/A',
+          change: m?.change,
+          status: ['positive', 'negative', 'warning', 'neutral'].includes(m?.status) ? m.status : 'neutral'
+        })) : [],
+        recommendations: Array.isArray(parsed.recommendations) ? parsed.recommendations.map((r: any) => typeof r === 'string' ? r : (r?.text || JSON.stringify(r))) : [],
+        alerts: Array.isArray(parsed.alerts) ? parsed.alerts.map((a: any) => typeof a === 'string' ? a : (a?.text || JSON.stringify(a))) : []
+      };
+      return safeResponse;
+    } catch (e) {
+      console.error("Gemini failed:", e);
+      return {
+        answer: "Sorry, I am having trouble connecting to Gemini. " + String(e),
+        locations: [],
+        metrics: [],
+        recommendations: [],
+        alerts: []
+      };
+    }
   },
 
   // POST /api/simulation
